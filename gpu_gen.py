@@ -702,16 +702,10 @@ class PM:
         # loss function.
         def loss_D():
             n = tf.reduce_mean(tf.log(D_real) + tf.log(1 - D_gene))
-            if tf.is_nan(n):
-                return 0
-            else:
-                return n
+            tf.cond(tf.is_nan(n),lambda:tf.constant(0.0),lambda:n)
         def loss_G():
             n = tf.reduce_mean(tf.log(D_gene))
-            if tf.is_nan(n):
-                return 0
-            else:
-                return n
+            tf.cond(tf.is_nan(n),lambda:tf.constant(0.0),lambda:n)
 
         D_var_list = [D_W1, D_W2]
         G_var_list = [G_W]
