@@ -701,8 +701,18 @@ class PM:
         D_real = discriminator(X, D_W1, D_W2)
 
         # loss function.
-        loss_D = tf.reduce_mean(tf.log(D_real) + tf.log(1 - D_gene))
-        loss_G = tf.reduce_mean(tf.log(D_gene))
+        def loss_D(D_real,D_gene):
+            n = tf.reduce_mean(tf.log(D_real) + tf.log(1 - D_gene))
+            if tf.math.is_nan(n):
+                return 0
+            else:
+                return n
+        def loss_G(D_gene):
+            n = tf.reduce_mean(tf.log(D_gene))
+            if tf.math.is_nan(n):
+                return 0
+            else:
+                return n
 
         D_var_list = [D_W1, D_W2]
         G_var_list = [G_W]
