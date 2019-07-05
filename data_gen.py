@@ -670,7 +670,7 @@ class PM:
 		#set the parameters.		
 		tf.set_random_seed(process_number)
 		batch_size = 1
-		learning_rate = 0.002
+		learning_rate = 0.0002
 
 		
 		#reconstucted_network_adjacency_matrix is an adjacency matrix of the reconstructed FIs network.
