@@ -630,8 +630,8 @@ class PM:
         D_real = discriminator(X, D_W1, D_W2)
         # D_real = D_real.assign( tf.where (tf.equal(D_real, tf.constant(0)), tf.constant(epsilon), D_real) )
         # loss function.
-        loss_D = tf.reduce_mean(tf.log(tf.cosh(1-D_real)) + tf.log(tf.cosh(D_gene)))
-        loss_G = tf.reduce_mean(tf.log(tf.cosh(1-D_gene)))
+        loss_D = tf.reduce_mean(D_real) - tf.reduce_mean(D_gene)
+        loss_G = -tf.reduce_mean(D_gene)
         D_var_list = [D_W1, D_W2]
         G_var_list = [G_W]
 
@@ -671,7 +671,8 @@ class PM:
             inds = sample(datas,50)
             for i in inds:
                 batch_xs = data_for_GANs[i].reshape(1, -1)
-                # print(batch_xs)
+                print(batch_xs)
+                sys.exit()
                 # print(batch_xs.shape)
                 # sys.exit()
                 noise = get_noise(1, n_genes)
@@ -688,21 +689,18 @@ class PM:
                 #     writer.add_summary(summary2, (i + 209 * epoch))
                 # writer.add_summary(lossD,(i+209*epoch))
                 # writer.add_summary(lossG,(i+209*epoch))
-            if epoch % 1000 == 0:
-                start = int(epoch/1000) * 10
-                print("generating data")
-                for i in range(start, start + 10):
-                    f = open("generated_data/sample_" + str(i) + ".txt", "w")
-                    noise = get_noise(1, n_genes)
-                    out = sess.run([G], feed_dict={Z: noise})
-                    line = ""
-                    test = np.asarray(out)
-                    print(test.shape)
-                    print(len(out[0][0]))
-                    for num in out[0][0]:
-                        line += str(num) + ","
-                    f.write(line)
-                    f.close()
+            if epoch % 100 == 0:
+                f = open("generated_data/sample_" + str(epoch) + ".txt", "w")
+                noise = get_noise(1, n_genes)
+                out = sess.run([G], feed_dict={Z: noise})
+                line = ""
+                test = np.asarray(out)
+                print(test.shape)
+                print(len(out[0][0]))
+                for num in out[0][0]:
+                    line += str(num) + ","
+                f.write(line)
+                f.close()
             loss.write(str(loss_val_D) + "\t" + str(loss_val_G) + "\n")
             print(str(loss_val_D) + "\t" + str(loss_val_G) + "\n")
             print(str(epoch))
