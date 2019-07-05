@@ -718,8 +718,8 @@ class PM:
         G_var_list = [G_W]
 
         # define optimizer.
-        train_D = tf.train.AdamOptimizer(learning_rate).minimize(-loss_D, var_list=D_var_list)
-        train_G = tf.train.AdamOptimizer(learning_rate).minimize(-loss_G, var_list=G_var_list)
+        train_D = tf.train.AdamOptimizer(learning_rate).minimize(-loss_D(), var_list=D_var_list)
+        train_G = tf.train.AdamOptimizer(learning_rate).minimize(-loss_G(), var_list=G_var_list)
 
         n_iter = data_for_GANs.shape[0]
         sess = tf.Session()
@@ -753,8 +753,8 @@ class PM:
                 # print(batch_xs.shape)
                 # sys.exit()
                 noise = get_noise(1, n_genes)
-                _, loss_val_D = sess.run([train_D, loss_D], feed_dict={X: batch_xs, Z: noise})
-                _, loss_val_G = sess.run([train_G, loss_G], feed_dict={Z: noise})
+                _, loss_val_D = sess.run([train_D, loss_D()], feed_dict={X: batch_xs, Z: noise})
+                _, loss_val_G = sess.run([train_G, loss_G()], feed_dict={Z: noise})
                 # _, loss_val_D, summary1 = sess.run([train_D, loss_D, summaries], feed_dict={X: batch_xs, Z: noise})
                 # _, loss_val_G, summary2 = sess.run([train_G, loss_G, summaries], feed_dict={Z: noise})
                 loss_val_D_list.append(loss_val_D)

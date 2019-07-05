@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a7487bf5-427b-4d2f-9196-106b3f393e81" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/gpu_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/gpu_gen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loss_0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/loss_0.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gpu_gen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="707" column="17" lean-forward="true" selection-start-line="707" selection-start-column="17" selection-end-line="707" selection-end-column="17" />
+            <state relative-caret-position="224">
+              <caret line="760" column="50" lean-forward="true" selection-start-line="760" selection-start-column="50" selection-end-line="760" selection-end-column="50" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -234,7 +233,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5982000" />
+    <option name="totallyTimeSpent" value="6088000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -323,8 +322,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gpu_gen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="707" column="17" lean-forward="true" selection-start-line="707" selection-start-column="17" selection-end-line="707" selection-end-column="17" />
+        <state relative-caret-position="224">
+          <caret line="760" column="50" lean-forward="true" selection-start-line="760" selection-start-column="50" selection-end-line="760" selection-end-column="50" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
