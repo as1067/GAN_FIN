@@ -689,6 +689,7 @@ class PM:
         tf.set_random_seed(process_number)
         batch_size = 1
         learning_rate = 0.002
+        epsilon = 1e-4
 
         # reconstucted_network_adjacency_matrix is an adjacency matrix of the reconstructed FIs network.
         reconstucted_network_adjacency_matrix, X, Z, G_W, D_W1, D_W2 = prepare(adjacency_matrix, n_genes, 512, n_genes,
@@ -697,22 +698,18 @@ class PM:
         G = generator(G_W, reconstucted_network_adjacency_matrix, Z)
 
         D_gene = discriminator(G, D_W1, D_W2)
-
+        D_gene[D_gene == 0] = epsilon
         D_real = discriminator(X, D_W1, D_W2)
+        D_real[D_real == 0] = epsilon
         # loss function.
-        def loss_D():
-            n = tf.reduce_mean(tf.log(D_real) + tf.log(1 - D_gene))
-            tf.cond(tf.is_nan(n),lambda:tf.constant(0.0),lambda:n)
-        def loss_G():
-            n = tf.reduce_mean(tf.log(D_gene))
-            tf.cond(tf.is_nan(n),lambda:tf.constant(0.0),lambda:n)
-
+        loss_D = tf.reduce_mean(tf.log(D_real) + tf.log(1 - D_gene))
+        loss_G = tf.reduce_mean(tf.log(D_gene))
         D_var_list = [D_W1, D_W2]
         G_var_list = [G_W]
 
         # define optimizer.
-        train_D = tf.train.AdamOptimizer(learning_rate).minimize(-loss_D(), var_list=D_var_list)
-        train_G = tf.train.AdamOptimizer(learning_rate).minimize(-loss_G(), var_list=G_var_list)
+        train_D = tf.train.AdamOptimizer(learning_rate).minimize(-loss_D, var_list=D_var_list)
+        train_G = tf.train.AdamOptimizer(learning_rate).minimize(-loss_G, var_list=G_var_list)
 
         n_iter = data_for_GANs.shape[0]
         sess = tf.Session()
@@ -746,8 +743,8 @@ class PM:
                 # print(batch_xs.shape)
                 # sys.exit()
                 noise = get_noise(1, n_genes)
-                _, loss_val_D = sess.run([train_D, loss_D()], feed_dict={X: batch_xs, Z: noise})
-                _, loss_val_G = sess.run([train_G, loss_G()], feed_dict={Z: noise})
+                _, loss_val_D = sess.run([train_D, loss_D], feed_dict={X: batch_xs, Z: noise})
+                _, loss_val_G = sess.run([train_G, loss_G], feed_dict={Z: noise})
                 # _, loss_val_D, summary1 = sess.run([train_D, loss_D, summaries], feed_dict={X: batch_xs, Z: noise})
                 # _, loss_val_G, summary2 = sess.run([train_G, loss_G, summaries], feed_dict={Z: noise})
                 loss_val_D_list.append(loss_val_D)

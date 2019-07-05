@@ -27,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gpu_gen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="707" column="66" selection-start-line="707" selection-start-column="66" selection-end-line="707" selection-end-column="66" />
+            <state relative-caret-position="270">
+              <caret line="699" column="41" lean-forward="true" selection-start-line="699" selection-start-column="41" selection-end-line="699" selection-end-column="41" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -233,7 +233,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6561000" />
+    <option name="totallyTimeSpent" value="7270000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -269,7 +269,7 @@
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/GAN_FIN$data_gen.coverage" NAME="data_gen Coverage Results" MODIFIED="1562307661485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GAN_FIN$data_gen.coverage" NAME="data_gen Coverage Results" MODIFIED="1562347507966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/generated_data/placeholder.txt">
@@ -322,8 +322,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gpu_gen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="707" column="66" selection-start-line="707" selection-start-column="66" selection-end-line="707" selection-end-column="66" />
+        <state relative-caret-position="270">
+          <caret line="699" column="41" lean-forward="true" selection-start-line="699" selection-start-column="41" selection-end-line="699" selection-end-column="41" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
