@@ -698,18 +698,18 @@ class PM:
         G = generator(G_W, reconstucted_network_adjacency_matrix, Z)
 
         D_gene = discriminator(G, D_W1, D_W2)
-        D_gene = D_gene.assign( tf.where (tf.equal(D_gene, tf.constant(0)), tf.constant(epsilon), D_gene) )
+        # D_gene = D_gene.assign( tf.where (tf.equal(D_gene, tf.constant(0)), tf.constant(epsilon), D_gene) )
         D_real = discriminator(X, D_W1, D_W2)
-        D_real = D_real.assign( tf.where (tf.equal(D_real, tf.constant(0)), tf.constant(epsilon), D_real) )
+        # D_real = D_real.assign( tf.where (tf.equal(D_real, tf.constant(0)), tf.constant(epsilon), D_real) )
         # loss function.
-        loss_D = tf.reduce_mean(tf.log(D_real) + tf.log(1 - D_gene))
-        loss_G = tf.reduce_mean(tf.log(D_gene))
+        loss_D = tf.reduce_mean(tf.log(tf.cosh(1-D_real)) + tf.log(tf.cosh(D_gene)))
+        loss_G = tf.reduce_mean(tf.log(tf.cosh(1-D_gene)))
         D_var_list = [D_W1, D_W2]
         G_var_list = [G_W]
 
         # define optimizer.
-        train_D = tf.train.AdamOptimizer(learning_rate).minimize(-loss_D, var_list=D_var_list)
-        train_G = tf.train.AdamOptimizer(learning_rate).minimize(-loss_G, var_list=G_var_list)
+        train_D = tf.train.AdamOptimizer(learning_rate).minimize(loss_D, var_list=D_var_list)
+        train_G = tf.train.AdamOptimizer(learning_rate).minimize(loss_G, var_list=G_var_list)
 
         n_iter = data_for_GANs.shape[0]
         sess = tf.Session()
