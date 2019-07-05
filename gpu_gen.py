@@ -17,6 +17,7 @@ import sys
 import argparse
 import csv
 import statistics
+from keras import backend as K
 from random import sample
 
 random.seed(0)
@@ -580,7 +581,7 @@ class PM:
         # discriminator of GANs.
         def discriminator(inputs, D_W1, D_W2):
             hidden = tf.nn.relu(tf.matmul(inputs, D_W1))
-            output = tf.nn.sigmoid(tf.matmul(hidden, D_W2))
+            output = tf.matmul(hidden, D_W2)
             return output
 
         # make random variables for generator.
@@ -630,14 +631,14 @@ class PM:
         D_real = discriminator(X, D_W1, D_W2)
         # D_real = D_real.assign( tf.where (tf.equal(D_real, tf.constant(0)), tf.constant(epsilon), D_real) )
         # loss function.
-        loss_D = tf.reduce_mean(D_real) - tf.reduce_mean(D_gene)
-        loss_G = -tf.reduce_mean(D_gene)
+        loss_D = tf.reduce_mean(D_real)-tf.reduce_mean(D_gene)
+        loss_G = tf.reduce_mean(D_real)-tf.reduce_mean(D_gene)
         D_var_list = [D_W1, D_W2]
         G_var_list = [G_W]
 
         # define optimizer.
-        loss_G = -tf.reduce_mean(D_gene)
-        loss_D = tf.reduce_mean(D_gene) - tf.reduce_mean(D_real)
+        # loss_G = -tf.reduce_mean(D_gene)
+        # loss_D = tf.reduce_mean(D_gene) - tf.reduce_mean(D_real)
 
         alpha = tf.random_uniform(
             shape=[batch_size, 1],
