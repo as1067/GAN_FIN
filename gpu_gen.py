@@ -34,6 +34,8 @@ def main():
     print("----------------------------------------------------------------------------------------------------")
     print("3. Step 2,3 : Learning the network and Feature selection using PageRank")
     biomarker_perfold = []
+    file = open("gpu_latest.txt", "r")
+    n = int(file.read())
     for foldnum in range(2):
         data_for_GANs = pm.mk_data_for_GANs(gene_in_reconstructed_FIs_perfold[foldnum], foldnum)
 
@@ -54,12 +56,10 @@ def main():
         # for n,p in enumerate(process_list) :
         # 	p.start()
         # result_GANs=[]
-        file = open("gpu_latest.txt","r")
-        n = int(file.read())
         for i in range(pm.n_experiment):
             pm.Learning_FIsnetwork_GANs(i, reconstructed_FIs_perfold[foldnum], data_for_GANs, foldnum,n)
-        file = open("gpu_latest.txt","w")
-        file.write(str(n+1))
+    file = open("gpu_latest.txt","w")
+    file.write(str(n+1))
     # for process in process_list :
     # 	process.join()
     # select the genes that appeared more than b times in t experiments as biomarkers.
