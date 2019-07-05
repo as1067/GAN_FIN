@@ -359,7 +359,6 @@ def preprocessing():
     # 	i+=1
 
     # divide samples for 10fold validation
-    print(' divide samples for 2fold validation ')
     good_sam, bad_sam = seperate_good_bad_patients(lable)
     # mRNA.T
     # kf = KFold(n_splits=2, random_state=None, shuffle=False)
@@ -677,8 +676,6 @@ class PM:
                 # _, loss_val_G, summary2 = sess.run([train_G, loss_G, summaries], feed_dict={Z: noise})
                 loss_val_D_list.append(loss_val_D)
                 loss_val_G_list.append(loss_val_G)
-                loss.write(str(loss_val_D) + "\t" + str(loss_val_G) + "\n")
-                print(str(loss_val_D) + "\t" + str(loss_val_G) + "\n")
                 # print(loss_val_D)
                 # sys.exit()
                 # if i%10 == 0:
@@ -686,7 +683,9 @@ class PM:
                 #     writer.add_summary(summary2, (i + 209 * epoch))
                 # writer.add_summary(lossD,(i+209*epoch))
                 # writer.add_summary(lossG,(i+209*epoch))
-                print(str(i))
+            loss.write(str(loss_val_D) + "\t" + str(loss_val_G) + "\n")
+            print(str(loss_val_D) + "\t" + str(loss_val_G) + "\n")
+            print(str(epoch))
         # tf.train.Saver().save(sess,"checkpoint/model.txt")
 
         print(' converge ', 'Epoch:', '%04d' % (epoch + 1), 'n_iter :',

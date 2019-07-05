@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a7487bf5-427b-4d2f-9196-106b3f393e81" name="Default Changelist" comment="" />
+    <list default="true" id="a7487bf5-427b-4d2f-9196-106b3f393e81" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/gpu_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/gpu_gen.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_gen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="398" column="9" selection-start-line="398" selection-start-column="5" selection-end-line="398" selection-end-column="9" />
+            <state relative-caret-position="10787">
+              <caret line="764" column="21" lean-forward="true" selection-start-line="764" selection-start-column="21" selection-end-line="764" selection-end-column="21" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -62,8 +64,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gpu_gen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="771" column="32" lean-forward="true" selection-start-line="771" selection-start-column="32" selection-end-line="771" selection-end-column="32" />
+            <state relative-caret-position="302">
+              <caret line="681" column="69" lean-forward="true" selection-start-line="681" selection-start-column="69" selection-end-line="681" selection-end-column="69" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -107,10 +109,12 @@
       <find>learning_rat</find>
       <find>learning_r</find>
       <find>divide</find>
-      <find>divi</find>
       <find>zscor</find>
       <find>sys.e</find>
       <find>foldnum</find>
+      <find>mk_d</find>
+      <find>divi</find>
+      <find>process</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -298,10 +302,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15913000" />
+    <option name="totallyTimeSpent" value="16291000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24248926" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -460,8 +465,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data_gen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="398" column="9" selection-start-line="398" selection-start-column="5" selection-end-line="398" selection-end-column="9" />
+        <state relative-caret-position="10787">
+          <caret line="764" column="21" lean-forward="true" selection-start-line="764" selection-start-column="21" selection-end-line="764" selection-end-column="21" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
@@ -470,8 +475,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gpu_gen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="771" column="32" lean-forward="true" selection-start-line="771" selection-start-column="32" selection-end-line="771" selection-end-column="32" />
+        <state relative-caret-position="302">
+          <caret line="681" column="69" lean-forward="true" selection-start-line="681" selection-start-column="69" selection-end-line="681" selection-end-column="69" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
