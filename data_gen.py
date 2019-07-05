@@ -690,8 +690,8 @@ class PM:
 		G_var_list = [G_W]
 
 		#define optimizer.
-		train_D = tf.train.AdamOptimizer(learning_rate).minimize(-loss_D, var_list=D_var_list)
-		train_G = tf.train.AdamOptimizer(learning_rate).minimize(-loss_G, var_list=G_var_list)
+		train_D = tf.train.AdamOptimizer(learning_rate).minimize(loss_D, var_list=D_var_list)
+		train_G = tf.train.AdamOptimizer(learning_rate).minimize(loss_G, var_list=G_var_list)
 		
 
 		n_iter = data_for_GANs.shape[0]
