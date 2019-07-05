@@ -618,9 +618,9 @@ class PM:
 			D_W2 = tf.Variable(tf.random_normal([n_hidden, 1], stddev=0.01))
 
 			#Set up weight summary
-			# tf.summary.histogram("Discriminator weights 1", D_W1)
-			# tf.summary.histogram("Discriminator weights 2", D_W2)
-			# tf.summary.histogram("Generator weights", G_W)
+			tf.summary.histogram("Discriminator weights 1", D_W1)
+			tf.summary.histogram("Discriminator weights 2", D_W2)
+			tf.summary.histogram("Generator weights", G_W)
 
 			
 			return reconstucted_network_adjacency_matrix,X,Z,G_W,D_W1,D_W2
@@ -670,7 +670,7 @@ class PM:
 		#set the parameters.		
 		tf.set_random_seed(process_number)
 		batch_size = 1
-		learning_rate = 0.001
+		learning_rate = 0.002
 
 		
 		#reconstucted_network_adjacency_matrix is an adjacency matrix of the reconstructed FIs network.
@@ -690,8 +690,8 @@ class PM:
 		G_var_list = [G_W]
 
 		#define optimizer.
-		train_D = tf.train.AdamOptimizer(learning_rate).minimize(loss_D, var_list=D_var_list)
-		train_G = tf.train.AdamOptimizer(learning_rate).minimize(loss_G, var_list=G_var_list)
+		train_D = tf.train.AdamOptimizer(learning_rate).minimize(-loss_D, var_list=D_var_list)
+		train_G = tf.train.AdamOptimizer(learning_rate).minimize(-loss_G, var_list=G_var_list)
 		
 
 		n_iter = data_for_GANs.shape[0]
@@ -726,16 +726,18 @@ class PM:
 				# print(batch_xs.shape)
 				# sys.exit()
 				noise = get_noise(1, n_genes)
-				_, loss_val_D = sess.run([train_D, loss_D], feed_dict={X: batch_xs, Z: noise})
-				_, loss_val_G = sess.run([train_G, loss_G], feed_dict={Z: noise})
+				# _, loss_val_D = sess.run([train_D, loss_D], feed_dict={X: batch_xs, Z: noise})
+				# _, loss_val_G = sess.run([train_G, loss_G], feed_dict={Z: noise})
+				_, loss_val_D,summary1 = sess.run([train_D, loss_D, summaries], feed_dict={X: batch_xs, Z: noise})
+				_, loss_val_G,summary2 = sess.run([train_G, loss_G,summaries], feed_dict={Z: noise})
 				loss_val_D_list.append(loss_val_D)
 				loss_val_G_list.append(loss_val_G)	
-				loss.write(str(loss_val_D)+"\t"+str(loss_val_G)+"\n")
-				print(str(loss_val_D)+"\t"+str(loss_val_G)+"\n")
+				loss.write(str(-1*loss_val_D)+"\t"+str(-1*loss_val_G)+"\n")
+				print(str(-1*loss_val_D)+"\t"+str(-1*loss_val_G)+"\n")
 				# print(loss_val_D)
 				# sys.exit()
-				# writer.add_summary(summary1,(i+209*epoch))
-				# writer.add_summary(summary2,(i+209*epoch))
+				writer.add_summary(summary1,(i+209*epoch))
+				writer.add_summary(summary2,(i+209*epoch))
 				# writer.add_summary(lossD,(i+209*epoch))
 				# writer.add_summary(lossG,(i+209*epoch))
 				print(str(i))
