@@ -17,6 +17,7 @@ import sys
 import argparse
 import csv
 import statistics
+from random import sample
 
 random.seed(0)
 np.random.seed(0)
@@ -644,6 +645,9 @@ class PM:
         summaries = tf.summary.merge_all()
         sess.run(tf.global_variables_initializer())
         loss_val_D, loss_val_G = 0, 0
+        datas = []
+        for i in range(n_iter):
+            datas.append(i)
         # print("generating compare data")
         # start = process_number*10+foldnum*10
         # for i in range(start,start+10):
@@ -664,7 +668,8 @@ class PM:
         for epoch in range(30000):
             loss_val_D_list = []
             loss_val_G_list = []
-            for i in range(n_iter):
+            inds = sample(datas,50)
+            for i in inds:
                 batch_xs = data_for_GANs[i].reshape(1, -1)
                 # print(batch_xs)
                 # print(batch_xs.shape)
