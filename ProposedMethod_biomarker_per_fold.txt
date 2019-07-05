@@ -1,0 +1,21 @@
+
+Fold Number(10 fold validation) : 0
+A1BG	A1BG-AS1	AAGAB	AAK1	AAMDC	
+Fold Number(10 fold validation) : 1
+A1BG	A1BG-AS1	AAGAB	AAK1	AAMDC	
+Fold Number(10 fold validation) : 2
+A1BG	A1BG-AS1	AAGAB	AAK1	AAMDC	
+Fold Number(10 fold validation) : 3
+A1BG	A1BG-AS1	AAGAB	AAK1	AAMDC	
+Fold Number(10 fold validation) : 4
+A1BG	A1BG-AS1	AAGAB	AAK1	AAMDC	
+Fold Number(10 fold validation) : 5
+A1BG	A1BG-AS1	AAGAB	AAK1	AAMDC	
+Fold Number(10 fold validation) : 6
+A1BG	A1BG-AS1	AAGAB	AAK1	AAMDC	
+Fold Number(10 fold validation) : 7
+A1BG	A1BG-AS1	AAGAB	AAK1	AAMDC	
+Fold Number(10 fold validation) : 8
+A1BG	A1BG-AS1	AAGAB	AAK1	AAMDC	
+Fold Number(10 fold validation) : 9
+A1BG	A1BG-AS1	AAGAB	AAK1	AAMDC	
