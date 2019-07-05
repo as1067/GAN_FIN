@@ -717,7 +717,7 @@ class PM:
 		# tf.train.Saver().save(sess,"checkpoint/start.txt")
 		loss = open("loss_"+str(foldnum)+".txt","w")			
 		print("training")
-		for epoch in range(10):
+		for epoch in range(100):
 			loss_val_D_list = []
 			loss_val_G_list = []
 			for i in range(n_iter):
