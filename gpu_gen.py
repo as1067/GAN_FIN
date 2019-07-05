@@ -36,28 +36,27 @@ def main():
     biomarker_perfold = []
     file = open("gpu_latest.txt", "r")
     n = int(file.read())
-    for foldnum in range(2):
-        data_for_GANs = pm.mk_data_for_GANs(gene_in_reconstructed_FIs_perfold[foldnum], foldnum)
+    # for foldnum in range(2):
+    data_for_GANs = pm.mk_data_for_GANs(gene_in_reconstructed_FIs_perfold)
 
-        score = np.zeros(pm.mRNA.shape[0])
-        # multiprocessing.
-        # output1 = Queue(); output2 = Queue(); output3 = Queue();output4 = Queue();output5 = Queue();
-        # output6 = Queue(); output7 = Queue(); output8 = Queue();output9 = Queue();output10 = Queue();
-        # output11 = Queue(); output12 = Queue(); output13 = Queue();output14 = Queue();output15 = Queue();
-        # output16 = Queue(); output17 = Queue(); output18 = Queue();output19 = Queue();output20 = Queue();
-        # process_list = []
-        # Output = [output1, output2, output3,output4,output5,output6, output7, output8,output9,output10,output11, output12, output13,output14,output15,output16, output17, output18,output19,output20]
+    score = np.zeros(pm.mRNA.shape[0])
+    # multiprocessing.
+    # output1 = Queue(); output2 = Queue(); output3 = Queue();output4 = Queue();output5 = Queue();
+    # output6 = Queue(); output7 = Queue(); output8 = Queue();output9 = Queue();output10 = Queue();
+    # output11 = Queue(); output12 = Queue(); output13 = Queue();output14 = Queue();output15 = Queue();
+    # output16 = Queue(); output17 = Queue(); output18 = Queue();output19 = Queue();output20 = Queue();
+    # process_list = []
+    # Output = [output1, output2, output3,output4,output5,output6, output7, output8,output9,output10,output11, output12, output13,output14,output15,output16, output17, output18,output19,output20]
 
-        # #To select a stable and robust feature for random initialization of weights, repeatedly experiment with the reconstructed network learning-phase using GANs and the PageRank process (t times).
-        # #t is n_experiment.
-        # for process_number in range(pm.n_experiment) :
-        # 	process_list.append(Process(target=pm.Learning_FIsnetwork_GANs, args=(process_number, reconstructed_FIs_perfold[foldnum],data_for_GANs,foldnum, Output[process_number])))
+    # #To select a stable and robust feature for random initialization of weights, repeatedly experiment with the reconstructed network learning-phase using GANs and the PageRank process (t times).
+    # #t is n_experiment.
+    # for process_number in range(pm.n_experiment) :
+    # 	process_list.append(Process(target=pm.Learning_FIsnetwork_GANs, args=(process_number, reconstructed_FIs_perfold[foldnum],data_for_GANs,foldnum, Output[process_number])))
 
-        # for n,p in enumerate(process_list) :
-        # 	p.start()
-        # result_GANs=[]
-        for i in range(pm.n_experiment):
-            pm.Learning_FIsnetwork_GANs(i, reconstructed_FIs_perfold[foldnum], data_for_GANs, foldnum,n)
+    # for n,p in enumerate(process_list) :
+    # 	p.start()
+    # result_GANs=[]
+    pm.Learning_FIsnetwork_GANs(i, reconstructed_FIs_perfold, data_for_GANs,n)
     file = open("gpu_latest.txt","w")
     file.write(str(n+1))
     # for process in process_list :
@@ -411,44 +410,22 @@ def preprocessing():
     # divide samples for 10fold validation
     print(' divide samples for 2fold validation ')
     good_sam, bad_sam = seperate_good_bad_patients(lable)
-    good_sam = np.array(good_sam)
-    bad_sam = np.array(bad_sam)
-
-    kf = KFold(n_splits=2, random_state=None, shuffle=False)
-
-    good_train_samples = []
-    bad_train_samples = []
+    # mRNA.T
+    # kf = KFold(n_splits=2, random_state=None, shuffle=False)
+    print(good_sam)
+    good_ids = []
+    bad_ids = []
+    for sample in good_sam:
+        good_ids.append(sample2id[sample])
+    for sample in bad_sam:
+        bad_ids.append(sample2id[sample])
     test_samples = []
-    for good_index, bad_index in zip(kf.split(good_sam), kf.split(bad_sam)):
-        good_train, good_test = good_sam[good_index[0]], good_sam[good_index[1]]
-        bad_train, bad_test = bad_sam[bad_index[0]], bad_sam[bad_index[1]]
-        good_train_samples.append(good_train)
-        bad_train_samples.append(bad_train)
-        test_tmp = np.hstack((good_test, bad_test))
-        test_samples.append(test_tmp)
-
-    # perform a t-test for each fold.
-    mRNA_ttest = []
-
-    for foldnum in range(2):
-        print(' ' + str(foldnum) + 'fold ttest start')
-        goodsam = good_train_samples[foldnum]
-        badsam = bad_train_samples[foldnum]
-        good_ids = []
-        bad_ids = []
-        for sample in goodsam:
-            good_ids.append(sample2id[sample])
-        for sample in badsam:
-            bad_ids.append(sample2id[sample])
-        mRNA_ttmp = t_test(mRNA, num2gene, good_ids, bad_ids)
-        mRNA_ttest.append(mRNA_ttmp)
-    # CNA_ttest.append(CNA_ttmp)
-    # met_ttest.append(met_ttmp)
-    # snp_ttest.append(snp_ttmp)
+    print("t-testing")
+    mRNA_ttmp = t_test(mRNA, num2gene, good_ids, bad_ids)
 
     # make instance of class PM.
     Pm = PM(n_gene_in_ttest, n_biomarker, damping_factor, n_experiment, n_limit, mRNA, lable, edge_list,
-            good_train_samples, bad_train_samples, test_samples, gene2num, num2gene, mRNA_ttest, sample2id,
+            good_sam, bad_sam, test_samples, gene2num, num2gene, mRNA_ttmp, sample2id,
             small_gene2num)
 
     return Pm
@@ -519,59 +496,59 @@ class PM:
     def reconstruct_FIs_network(self):
         print("reconstructing network")
         # reconstructed_network_10fold is list containing lists of the edges in reconstructed network per fold.
-        reconstructed_network_10fold = []
+        # reconstructed_network_10fold = []
 
         # gene_in_reconstructed_network_10fold is list containing sets of the genes in reconstructed network per fold.
-        gene_in_reconstructed_network_10fold = []
+        # gene_in_reconstructed_network_10fold = []
 
         # reconstruct network per fold.
-        for foldnum in range(2):
+        # for foldnum in range(2):
 
-            # reconstructed_network is a list of the edges in reconstructed network in the fold (foldnum :fold number for 10fold validation).
-            reconstructed_network = []
+        # reconstructed_network is a list of the edges in reconstructed network in the fold (foldnum :fold number for 10fold validation).
+        reconstructed_network = []
 
-            # gene_in_reconstructed_network is a set of the genes in reconstructed network in the fold (foldnum :fold number for 10fold validation).
-            gene_in_reconstructed_network = set()
+        # gene_in_reconstructed_network is a set of the genes in reconstructed network in the fold (foldnum :fold number for 10fold validation).
+        gene_in_reconstructed_network = set()
 
-            # sort genes by t-statistics.
-            test_temp = self.mRNA_ttest[foldnum]
-            test_temp.sort(key=lambda tup: tup[0], reverse=True)
-            # print(test_temp)
-            # CNA_t_sort=self.CNA_ttest[foldnum].sort_values(by=0,ascending=False)
-            # met_t_sort=self.met_ttest[foldnum].sort_values(by=0,ascending=False)
-            # snp_t_sort=self.snp_ttest[foldnum].sort_values(by=0,ascending=False)
+        # sort genes by t-statistics.
+        test_temp = self.mRNA_ttest
+        test_temp.sort(key=lambda tup: tup[0], reverse=True)
+        # print(test_temp)
+        # CNA_t_sort=self.CNA_ttest[foldnum].sort_values(by=0,ascending=False)
+        # met_t_sort=self.met_ttest[foldnum].sort_values(by=0,ascending=False)
+        # snp_t_sort=self.snp_ttest[foldnum].sort_values(by=0,ascending=False)
 
-            # selected_by_ttest is a set of the top N genes which have high absolute values of t-statistics in mRNA, CNA, methylation, or SNP data.
-            selected_by_ttest = set()
-            for i in range(self.n_gene_in_ttest):
-                selected_by_ttest.add(test_temp[i])
-            top_genes = []
-            for tup in selected_by_ttest:
-                top_genes.append(self.num2gene[tup[1]])
-            # print(top_genes)
-            # sys.exit()
-            # selected_by_ttest.update(CNA_t_sort.index[:self.n_gene_in_ttest])
-            # selected_by_ttest.update(met_t_sort.index[:self.n_gene_in_ttest])
-            # selected_by_ttest.update(snp_t_sort.index[:self.n_gene_in_ttest])
+        # selected_by_ttest is a set of the top N genes which have high absolute values of t-statistics in mRNA, CNA, methylation, or SNP data.
+        selected_by_ttest = set()
+        for i in range(self.n_gene_in_ttest):
+            selected_by_ttest.add(test_temp[i])
+        top_genes = []
+        for tup in selected_by_ttest:
+            top_genes.append(self.num2gene[tup[1]])
+        # print(top_genes)
+        # sys.exit()
+        # selected_by_ttest.update(CNA_t_sort.index[:self.n_gene_in_ttest])
+        # selected_by_ttest.update(met_t_sort.index[:self.n_gene_in_ttest])
+        # selected_by_ttest.update(snp_t_sort.index[:self.n_gene_in_ttest])
 
-            # construct a network. include all edges involving at least one of the genes belonging to selected_by_ttest.
-            for edge in self.edge_list:
-                # print(edge[0])
-                if edge[0] in top_genes or edge[1] in top_genes:
-                    reconstructed_network.append(edge)
-                    gene_in_reconstructed_network.update(edge)
-            reconstructed_network_10fold.append(reconstructed_network)
-            gene_in_reconstructed_network_10fold.append(gene_in_reconstructed_network)
-        return reconstructed_network_10fold, gene_in_reconstructed_network_10fold
+        # construct a network. include all edges involving at least one of the genes belonging to selected_by_ttest.
+        for edge in self.edge_list:
+            # print(edge[0])
+            if edge[0] in top_genes or edge[1] in top_genes:
+                reconstructed_network.append(edge)
+                gene_in_reconstructed_network.update(edge)
+            # reconstructed_network_10fold.append(reconstructed_network)
+            # gene_in_reconstructed_network_10fold.append(gene_in_reconstructed_network)
+        return reconstructed_network, gene_in_reconstructed_network
 
     # step 2-1. make data for GANs.
     # foldnum is fold number.
     # network is the gene in reconstructed network in the fold.
-    def mk_data_for_GANs(self, networkgene, foldnum):
+    def mk_data_for_GANs(self, networkgene):
         print("making data")
         # print(networkgene)
         # merge traing samples.
-        trainsample = np.hstack((self.good_train_samples[foldnum], self.bad_train_samples[foldnum]))
+        trainsample = np.hstack((self.good_train_samples, self.bad_train_samples))
         random.seed(0)
 
         # to suffle between train samples have good prognosis and train sample have bad prognosis.
@@ -605,7 +582,7 @@ class PM:
     # edge_list is the edges of FIs network in the fold.
     # data_for_GANs is the data we made in step 2-1.
     # foldnum is the fold number.
-    def Learning_FIsnetwork_GANs(self, process_number, edge_list, data_for_GANs, foldnum,n):
+    def Learning_FIsnetwork_GANs(self, process_number, edge_list, data_for_GANs,n):
 
         # creat an adjacency matrix from the reconstructed FIs network.
         def make_adjacencyMatrix_for_GANs(n_genes, edge_list):
@@ -659,7 +636,7 @@ class PM:
         def get_noise(batch_size, n_noise):
             return np.random.normal(size=(batch_size, n_noise))
 
-        print(' start process	process number : ', process_number, '	fold number :', foldnum)
+        print(' start process	process number : ', process_number)
 
         # get a set of genes from reconstructed FIs network.
         total_gene = []
@@ -732,9 +709,9 @@ class PM:
         # 	f.close()
         # perform GANs.
         # tf.train.Saver().save(sess,"checkpoint/start.txt")
-        loss = open("loss"+str(n)+"_" + str(foldnum) + ".txt", "w")
+        loss = open("loss"+str(n)+".txt", "w")
         print("training")
-        for epoch in range(100):
+        for epoch in range(30000):
             loss_val_D_list = []
             loss_val_G_list = []
             for i in range(n_iter):
@@ -764,21 +741,22 @@ class PM:
         print(' process ' + str(process_number) + ' converge ', 'Epoch:', '%04d' % (epoch + 1), 'n_iter :',
               '%04d' % n_iter, 'D_loss : {:.4}'.format(np.mean(loss_val_D_list)),
               'G_loss : {:.4}'.format(np.mean(loss_val_G_list)))
-        print("generating data")
-        start = process_number * 10 + foldnum * 10
-        for i in range(start, start + 10):
-            f = open("generated_data/sample_" + str(i) + ".txt", "w")
-            noise = get_noise(1, n_genes)
-            out = sess.run([G], feed_dict={Z: noise})
-            line = ""
-            test = np.asarray(out)
-            print(test.shape)
-            print(len(out[0][0]))
-            for num in out[0][0]:
-                line += str(num) + ","
-            f.write(line)
-            f.close()
-        sess.close()
+        if epoch%1000 == 0:
+            print("generating data")
+            start = process_number * 10
+            for i in range(start, start + 10):
+                f = open("generated_data/sample_" + str(i) + ".txt", "w")
+                noise = get_noise(1, n_genes)
+                out = sess.run([G], feed_dict={Z: noise})
+                line = ""
+                test = np.asarray(out)
+                print(test.shape)
+                print(len(out[0][0]))
+                for num in out[0][0]:
+                    line += str(num) + ","
+                f.write(line)
+                f.close()
+            sess.close()
 
     # example = data_for_GANs[0].reshape(1,-1)
     # ex = example[0]
