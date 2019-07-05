@@ -39,7 +39,7 @@ class GAN():
         img = self.generator(z)
 
         # For the combined model we will only train the generator
-        self.discriminator.trainable = True
+        self.discriminator.trainable = False
 
         # The discriminator takes generated images as input and determines validity
         validity = self.discriminator(img)
@@ -103,7 +103,7 @@ class GAN():
         # Adversarial ground truths
         valid = np.ones((batch_size, 1))
         fake = np.zeros((batch_size, 1))
-
+        loss_file = open("mnist_loss.txt","w")
         for epoch in range(epochs):
 
             # ---------------------
@@ -132,7 +132,7 @@ class GAN():
 
             # Train the generator (to have the discriminator label samples as valid)
             g_loss = self.combined.train_on_batch(noise, valid)
-
+            loss_file.write(str(d_loss)+"\t"+str(g_loss)+"\n")
             # Plot the progress
             print ("%d [D loss: %f, acc.: %.2f%%] [G loss: %f]" % (epoch, d_loss[0], 100*d_loss[1], g_loss))
 

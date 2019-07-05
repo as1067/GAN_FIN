@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7487bf5-427b-4d2f-9196-106b3f393e81" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/data_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_gen.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gpu_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/gpu_gen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/0.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/1000.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/1000.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/1200.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/1200.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/1400.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/1400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/200.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/200.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/400.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/600.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/600.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/800.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/800.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mnist_gan.py" beforeDir="false" afterPath="$PROJECT_DIR$/mnist_gan.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mnist_gan.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-60">
-              <caret line="103" column="13" selection-start-line="103" selection-start-column="8" selection-end-line="103" selection-end-column="13" />
+            <state relative-caret-position="500">
+              <caret line="130" column="35" selection-start-line="130" selection-start-column="35" selection-end-line="130" selection-end-column="35" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
               </folding>
@@ -65,8 +73,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gpu_gen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="673" column="33" lean-forward="true" selection-start-line="673" selection-start-column="33" selection-end-line="673" selection-end-column="33" />
+            <state relative-caret-position="146">
+              <caret line="698" column="42" lean-forward="true" selection-start-line="698" selection-start-column="42" selection-end-line="698" selection-end-column="42" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -114,9 +122,9 @@
       <find>foldnum</find>
       <find>mk_d</find>
       <find>process</find>
-      <find>valid</find>
       <find>divi</find>
       <find>inds</find>
+      <find>valid</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -130,9 +138,9 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/vizloss.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/mnist_gan.py" />
         <option value="$PROJECT_DIR$/tf_mnist.py" />
         <option value="$PROJECT_DIR$/data_gen.py" />
+        <option value="$PROJECT_DIR$/mnist_gan.py" />
         <option value="$PROJECT_DIR$/gpu_gen.py" />
       </list>
     </option>
@@ -198,7 +206,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.gpu_gen">
+  <component name="RunManager" selected="Python.mnist_gan">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="GAN_FIN" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -262,6 +270,25 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="mnist_gan" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GAN_FIN" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mnist_gan.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="vizloss" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GAN_FIN" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -283,6 +310,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.mnist_gan" />
         <item itemvalue="Python.gpu_gen" />
         <item itemvalue="Python.data_gen" />
         <item itemvalue="Python.vizloss" />
@@ -304,7 +332,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16851000" />
+    <option name="totallyTimeSpent" value="17419000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -455,16 +483,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mnist_gan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
-          <caret line="103" column="13" selection-start-line="103" selection-start-column="8" selection-end-line="103" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data_gen.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
@@ -475,10 +493,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mnist_gan.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="130" column="35" selection-start-line="130" selection-start-column="35" selection-end-line="130" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gpu_gen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="673" column="33" lean-forward="true" selection-start-line="673" selection-start-column="33" selection-end-line="673" selection-end-column="33" />
+        <state relative-caret-position="146">
+          <caret line="698" column="42" lean-forward="true" selection-start-line="698" selection-start-column="42" selection-end-line="698" selection-end-column="42" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>

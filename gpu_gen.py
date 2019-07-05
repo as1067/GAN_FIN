@@ -688,6 +688,21 @@ class PM:
                 #     writer.add_summary(summary2, (i + 209 * epoch))
                 # writer.add_summary(lossD,(i+209*epoch))
                 # writer.add_summary(lossG,(i+209*epoch))
+            if epoch % 1000 == 0:
+                start = int(epoch/1000) * 10
+                print("generating data")
+                for i in range(start, start + 10):
+                    f = open("generated_data/sample_" + str(i) + ".txt", "w")
+                    noise = get_noise(1, n_genes)
+                    out = sess.run([G], feed_dict={Z: noise})
+                    line = ""
+                    test = np.asarray(out)
+                    print(test.shape)
+                    print(len(out[0][0]))
+                    for num in out[0][0]:
+                        line += str(num) + ","
+                    f.write(line)
+                    f.close()
             loss.write(str(loss_val_D) + "\t" + str(loss_val_G) + "\n")
             print(str(loss_val_D) + "\t" + str(loss_val_G) + "\n")
             print(str(epoch))
@@ -696,22 +711,7 @@ class PM:
         print(' converge ', 'Epoch:', '%04d' % (epoch + 1), 'n_iter :',
               '%04d' % n_iter, 'D_loss : {:.4}'.format(np.mean(loss_val_D_list)),
               'G_loss : {:.4}'.format(np.mean(loss_val_G_list)))
-        if epoch%1000 == 0:
-            start = epoch*10
-            print("generating data")
-            for i in range(start,start+10):
-                f = open("generated_data/sample_" + str(i) + ".txt", "w")
-                noise = get_noise(1, n_genes)
-                out = sess.run([G], feed_dict={Z: noise})
-                line = ""
-                test = np.asarray(out)
-                print(test.shape)
-                print(len(out[0][0]))
-                for num in out[0][0]:
-                    line += str(num) + ","
-                f.write(line)
-                f.close()
-            sess.close()
+        sess.close()
 
     # example = data_for_GANs[0].reshape(1,-1)
     # ex = example[0]
