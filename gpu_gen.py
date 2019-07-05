@@ -40,58 +40,9 @@ def main():
     data_for_GANs = pm.mk_data_for_GANs(gene_in_reconstructed_FIs_perfold)
 
     score = np.zeros(pm.mRNA.shape[0])
-    # multiprocessing.
-    # output1 = Queue(); output2 = Queue(); output3 = Queue();output4 = Queue();output5 = Queue();
-    # output6 = Queue(); output7 = Queue(); output8 = Queue();output9 = Queue();output10 = Queue();
-    # output11 = Queue(); output12 = Queue(); output13 = Queue();output14 = Queue();output15 = Queue();
-    # output16 = Queue(); output17 = Queue(); output18 = Queue();output19 = Queue();output20 = Queue();
-    # process_list = []
-    # Output = [output1, output2, output3,output4,output5,output6, output7, output8,output9,output10,output11, output12, output13,output14,output15,output16, output17, output18,output19,output20]
-
-    # #To select a stable and robust feature for random initialization of weights, repeatedly experiment with the reconstructed network learning-phase using GANs and the PageRank process (t times).
-    # #t is n_experiment.
-    # for process_number in range(pm.n_experiment) :
-    # 	process_list.append(Process(target=pm.Learning_FIsnetwork_GANs, args=(process_number, reconstructed_FIs_perfold[foldnum],data_for_GANs,foldnum, Output[process_number])))
-
-    # for n,p in enumerate(process_list) :
-    # 	p.start()
-    # result_GANs=[]
-    pm.Learning_FIsnetwork_GANs(i, reconstructed_FIs_perfold, data_for_GANs,n)
+    pm.Learning_FIsnetwork_GANs(reconstructed_FIs_perfold, data_for_GANs,n)
     file = open("gpu_latest.txt","w")
     file.write(str(n+1))
-    # for process in process_list :
-    # 	process.join()
-    # select the genes that appeared more than b times in t experiments as biomarkers.
-    # t is n_experiment.
-    # b is limit.
-
-
-# 	print("pagerank")
-# 	for i in range(pm.n_experiment):
-# 		pagerank_genes=pm.pagerank(result_GANs[i])
-# 		for k in pagerank_genes:
-# 			score[pm.small_gene2num[k]]=score[pm.small_gene2num[k]]+1
-# 	biomarker=[]
-# 	genes = []
-# 	for i in range(pm.mRNA.shape[0]):
-# 		genes.append(pm.num2gene[i])
-# 	for i,j in zip(score,genes):
-# 		if i >=pm.limit:
-# 			biomarker.append(j)
-# 	biomarker_perfold.append(biomarker)
-
-# #save biomarker
-# f = open("Lung_Adenocarcino_biomarkers.txt", 'w')
-# for foldnum in range(10):
-# 	f.write("\nFold Number(10 fold validation) : %d\n" % foldnum)
-# 	for gene in biomarker_perfold[foldnum]:
-# 		f.write("%s\t" % gene)
-# f.close()
-# print("----------------------------------------------------------------------------------------------------")
-# print("4. Step4 : Prognosis Prediction")
-# pm.auc(reconstructed_FIs_perfold,biomarker_perfold)
-
-
 """
 	From here,Functions for preprocessing
 	this step includes loading data,intersectioning data,z-scoring for each sample and t-test for each fold
@@ -582,7 +533,7 @@ class PM:
     # edge_list is the edges of FIs network in the fold.
     # data_for_GANs is the data we made in step 2-1.
     # foldnum is the fold number.
-    def Learning_FIsnetwork_GANs(self, process_number, edge_list, data_for_GANs,n):
+    def Learning_FIsnetwork_GANs(self, edge_list, data_for_GANs,n):
 
         # creat an adjacency matrix from the reconstructed FIs network.
         def make_adjacencyMatrix_for_GANs(n_genes, edge_list):
@@ -636,7 +587,7 @@ class PM:
         def get_noise(batch_size, n_noise):
             return np.random.normal(size=(batch_size, n_noise))
 
-        print(' start process	process number : ', process_number)
+        print(' start process')
 
         # get a set of genes from reconstructed FIs network.
         total_gene = []
@@ -663,7 +614,7 @@ class PM:
         adjacency_matrix = make_adjacencyMatrix_for_GANs(n_genes, edge_list)
 
         # set the parameters.
-        tf.set_random_seed(process_number)
+        tf.set_random_seed(0)
         batch_size = 1
         learning_rate = 0.0002
         epsilon = 1e-4
@@ -738,13 +689,13 @@ class PM:
                 print(str(i))
         # tf.train.Saver().save(sess,"checkpoint/model.txt")
 
-        print(' process ' + str(process_number) + ' converge ', 'Epoch:', '%04d' % (epoch + 1), 'n_iter :',
+        print(' converge ', 'Epoch:', '%04d' % (epoch + 1), 'n_iter :',
               '%04d' % n_iter, 'D_loss : {:.4}'.format(np.mean(loss_val_D_list)),
               'G_loss : {:.4}'.format(np.mean(loss_val_G_list)))
         if epoch%1000 == 0:
+            start = epoch*10
             print("generating data")
-            start = process_number * 10
-            for i in range(start, start + 10):
+            for i in range(start,start+10):
                 f = open("generated_data/sample_" + str(i) + ".txt", "w")
                 noise = get_noise(1, n_genes)
                 out = sess.run([G], feed_dict={Z: noise})
