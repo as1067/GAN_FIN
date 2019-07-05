@@ -684,8 +684,8 @@ class PM:
 		
 		#loss function.
 		loss_D = tf.reduce_mean(tf.log(D_real) + tf.log(1 - D_gene))
-
 		loss_G = tf.reduce_mean(tf.log(D_gene))
+
 		D_var_list = [D_W1, D_W2]
 		G_var_list = [G_W]
 
@@ -731,6 +731,7 @@ class PM:
 				loss_val_D_list.append(loss_val_D)
 				loss_val_G_list.append(loss_val_G)	
 				loss.write(str(loss_val_D)+"\t"+str(loss_val_G)+"\n")
+				print(str(loss_val_D)+"\t"+str(loss_val_G)+"\n")
 				# print(loss_val_D)
 				# sys.exit()
 				# writer.add_summary(summary1,(i+209*epoch))
