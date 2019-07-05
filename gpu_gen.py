@@ -671,8 +671,8 @@ class PM:
             inds = sample(datas,50)
             for i in inds:
                 batch_xs = data_for_GANs[i].reshape(1, -1)
-                print(batch_xs)
-                sys.exit()
+                # print(batch_xs)
+                # sys.exit()
                 # print(batch_xs.shape)
                 # sys.exit()
                 noise = get_noise(1, n_genes)
