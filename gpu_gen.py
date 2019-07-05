@@ -54,10 +54,12 @@ def main():
         # for n,p in enumerate(process_list) :
         # 	p.start()
         # result_GANs=[]
-
+        file = open("gpu_latest.txt","r")
+        n = int(file.read())
         for i in range(pm.n_experiment):
-            pm.Learning_FIsnetwork_GANs(i, reconstructed_FIs_perfold[foldnum], data_for_GANs, foldnum)
-
+            pm.Learning_FIsnetwork_GANs(i, reconstructed_FIs_perfold[foldnum], data_for_GANs, foldnum,n)
+        file = open("gpu_latest.txt","w")
+        file.write(str(n+1))
     # for process in process_list :
     # 	process.join()
     # select the genes that appeared more than b times in t experiments as biomarkers.
@@ -603,7 +605,7 @@ class PM:
     # edge_list is the edges of FIs network in the fold.
     # data_for_GANs is the data we made in step 2-1.
     # foldnum is the fold number.
-    def Learning_FIsnetwork_GANs(self, process_number, edge_list, data_for_GANs, foldnum):
+    def Learning_FIsnetwork_GANs(self, process_number, edge_list, data_for_GANs, foldnum,n):
 
         # creat an adjacency matrix from the reconstructed FIs network.
         def make_adjacencyMatrix_for_GANs(n_genes, edge_list):
@@ -711,8 +713,8 @@ class PM:
 
         n_iter = data_for_GANs.shape[0]
         sess = tf.Session()
-        writer = tf.summary.FileWriter("./logs/gan_mrna")
-        summaries = tf.summary.merge_all()
+        # writer = tf.summary.FileWriter("./logs/gan_mrna")
+        # summaries = tf.summary.merge_all()
         sess.run(tf.global_variables_initializer())
         loss_val_D, loss_val_G = 0, 0
         # print("generating compare data")
@@ -730,7 +732,7 @@ class PM:
         # 	f.close()
         # perform GANs.
         # tf.train.Saver().save(sess,"checkpoint/start.txt")
-        loss = open("loss_" + str(foldnum) + ".txt", "w")
+        loss = open("loss"+str(n)+"_" + str(foldnum) + ".txt", "w")
         print("training")
         for epoch in range(100):
             loss_val_D_list = []
