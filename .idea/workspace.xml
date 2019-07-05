@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7487bf5-427b-4d2f-9196-106b3f393e81" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_gen.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data_gen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="696" column="39" lean-forward="true" selection-start-line="696" selection-start-column="39" selection-end-line="696" selection-end-column="39" />
+            <state relative-caret-position="263">
+              <caret line="677" lean-forward="true" selection-start-line="677" selection-end-line="677" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -44,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/loss_0.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="466">
-              <caret line="716" column="12" lean-forward="true" selection-start-line="716" selection-end-line="716" selection-end-column="12" />
+              <caret line="716" column="12" selection-start-line="716" selection-start-column="12" selection-end-line="716" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -193,7 +192,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3045000" />
+    <option name="totallyTimeSpent" value="3479000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -254,14 +253,14 @@
     <entry file="file://$PROJECT_DIR$/loss_0.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="466">
-          <caret line="716" column="12" lean-forward="true" selection-start-line="716" selection-end-line="716" selection-end-column="12" />
+          <caret line="716" column="12" selection-start-line="716" selection-start-column="12" selection-end-line="716" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data_gen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="696" column="39" lean-forward="true" selection-start-line="696" selection-start-column="39" selection-end-line="696" selection-end-column="39" />
+        <state relative-caret-position="263">
+          <caret line="677" lean-forward="true" selection-start-line="677" selection-end-line="677" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
