@@ -632,7 +632,6 @@ class PM:
         # D_real = D_real.assign( tf.where (tf.equal(D_real, tf.constant(0)), tf.constant(epsilon), D_real) )
         # loss function.
         loss_D = tf.reduce_mean(D_real)-tf.reduce_mean(D_gene)
-        loss_G = tf.reduce_mean(D_real)-tf.reduce_mean(D_gene)
         D_var_list = [D_W1, D_W2]
         G_var_list = [G_W]
 
@@ -651,6 +650,7 @@ class PM:
         slopes = tf.sqrt(tf.reduce_sum(tf.square(gradients), reduction_indices=[1]))
         gradient_penalty = tf.reduce_mean((slopes - 1.) ** 2)
         loss_D += LAMBDA * gradient_penalty
+        loss_G =-tf.reduce_mean(D_gene)
         train_G = tf.train.AdamOptimizer(
             learning_rate=1e-4,
             beta1=0.5,
@@ -694,13 +694,25 @@ class PM:
             inds = sample(datas,50)
             for i in inds:
                 batch_xs = data_for_GANs[i].reshape(1, -1)
+                if epoch % 100 == 0:
+                    f = open("generated_data/sample_" + str(epoch) + ".txt", "w")
+                    noise = get_noise(1, n_genes)
+                    out = sess.run([G], feed_dict={Z: noise})
+                    line = ""
+                    test = np.asarray(out)
+                    # print(test.shape)
+                    # print(len(out[0][0]))
+                    for num in out[0][0]:
+                        line += str(num) + ","
+                    f.write(line)
+                    f.close()
                 # print(batch_xs)
                 # sys.exit()
                 # print(batch_xs.shape)
                 # sys.exit()
                 noise = get_noise(1, n_genes)
                 _, loss_val_D = sess.run([train_D, loss_D], feed_dict={X: batch_xs, Z: noise})
-                _, loss_val_G = sess.run([train_G, loss_G], feed_dict={Z: noise})
+                _, loss_val_G = sess.run([train_G, loss_G], feed_dict={X:batch_xs,Z: noise})
                 # _, loss_val_D, summary1 = sess.run([train_D, loss_D, summaries], feed_dict={X: batch_xs, Z: noise})
                 # _, loss_val_G, summary2 = sess.run([train_G, loss_G, summaries], feed_dict={Z: noise})
                 loss_val_D_list.append(loss_val_D)
@@ -712,18 +724,6 @@ class PM:
                 #     writer.add_summary(summary2, (i + 209 * epoch))
                 # writer.add_summary(lossD,(i+209*epoch))
                 # writer.add_summary(lossG,(i+209*epoch))
-            if epoch % 100 == 0:
-                f = open("generated_data/sample_" + str(epoch) + ".txt", "w")
-                noise = get_noise(1, n_genes)
-                out = sess.run([G], feed_dict={Z: noise})
-                line = ""
-                test = np.asarray(out)
-                print(test.shape)
-                print(len(out[0][0]))
-                for num in out[0][0]:
-                    line += str(num) + ","
-                f.write(line)
-                f.close()
             loss.write(str(loss_val_D) + "\t" + str(loss_val_G) + "\n")
             print(str(loss_val_D) + "\t" + str(loss_val_G) + "\n")
             print(str(epoch))

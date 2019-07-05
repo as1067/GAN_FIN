@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7487bf5-427b-4d2f-9196-106b3f393e81" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/generated_data/sample_0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/generated_data/sample_0.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gpu_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/gpu_gen.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gpu_gen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="684" column="25" lean-forward="true" selection-start-line="684" selection-start-column="25" selection-end-line="684" selection-end-column="25" />
+            <state relative-caret-position="373">
+              <caret line="652" column="16" selection-start-line="652" selection-start-column="16" selection-end-line="652" selection-end-column="16" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -27,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wgan_keras.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+            <state relative-caret-position="1727">
+              <caret line="143" column="32" selection-start-line="143" selection-start-column="27" selection-end-line="143" selection-end-column="32" />
               <folding>
                 <element signature="e#1223#1238#0" expanded="true" />
               </folding>
@@ -120,8 +121,9 @@
       <find>wgan-gp</find>
       <find>wassers</find>
       <find>generator_mode</find>
-      <find>loss_d</find>
       <find>wasser</find>
+      <find>loss_d</find>
+      <find>negat</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -205,7 +207,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.wgan_keras">
+  <component name="RunManager" selected="Python.gpu_gen">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="GAN_FIN" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -325,10 +327,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.gpu_gen" />
         <item itemvalue="Python.wgan_keras" />
         <item itemvalue="Python.wgan_tf" />
         <item itemvalue="Python.tf_mnist" />
-        <item itemvalue="Python.gpu_gen" />
         <item itemvalue="Python.mnist_gan" />
       </list>
     </recent_temporary>
@@ -348,13 +350,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23165000" />
+    <option name="totallyTimeSpent" value="24046000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24248926" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24248926" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -368,7 +370,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32891566" />
-      <window_info anchor="bottom" id="Python Console" order="11" visible="true" weight="0.32891566" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="11" visible="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -570,8 +572,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wgan_keras.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="1727">
+          <caret line="143" column="32" selection-start-line="143" selection-start-column="27" selection-end-line="143" selection-end-column="32" />
           <folding>
             <element signature="e#1223#1238#0" expanded="true" />
           </folding>
@@ -580,8 +582,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gpu_gen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="684" column="25" lean-forward="true" selection-start-line="684" selection-start-column="25" selection-end-line="684" selection-end-column="25" />
+        <state relative-caret-position="373">
+          <caret line="652" column="16" selection-start-line="652" selection-start-column="16" selection-end-line="652" selection-end-column="16" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
