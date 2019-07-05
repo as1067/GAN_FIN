@@ -683,15 +683,15 @@ class PM:
 		D_real = discriminator(X,D_W1,D_W2)
 		
 		#loss function.
-		loss_D = tf.reduce_mean(tf.log(D_real) + tf.log(1 - D_gene))
-		loss_G = tf.reduce_mean(tf.log(D_gene))
+		loss_D = tf.reduce_mean(tf.log(tf.cosh(1 - D_real)) + tf.log(tf.cosh(D_gene)))
+		loss_G = tf.reduce_mean(tf.log(tf.cosh(1 - D_gene)))
 
 		D_var_list = [D_W1, D_W2]
 		G_var_list = [G_W]
 
 		#define optimizer.
-		train_D = tf.train.AdamOptimizer(learning_rate).minimize(-loss_D, var_list=D_var_list)
-		train_G = tf.train.AdamOptimizer(learning_rate).minimize(-loss_G, var_list=G_var_list)
+		train_D = tf.train.AdamOptimizer(learning_rate).minimize(loss_D, var_list=D_var_list)
+		train_G = tf.train.AdamOptimizer(learning_rate).minimize(loss_G, var_list=G_var_list)
 		
 
 		n_iter = data_for_GANs.shape[0]
@@ -732,8 +732,8 @@ class PM:
 				_, loss_val_G,summary2 = sess.run([train_G, loss_G,summaries], feed_dict={Z: noise})
 				loss_val_D_list.append(loss_val_D)
 				loss_val_G_list.append(loss_val_G)	
-				loss.write(str(-1*loss_val_D)+"\t"+str(-1*loss_val_G)+"\n")
-				print(str(-1*loss_val_D)+"\t"+str(-1*loss_val_G)+"\n")
+				loss.write(str(loss_val_D)+"\t"+str(loss_val_G)+"\n")
+				print(str(loss_val_D)+"\t"+str(loss_val_G)+"\n")
 				# print(loss_val_D)
 				# sys.exit()
 				writer.add_summary(summary1,(i+209*epoch))
