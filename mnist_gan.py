@@ -39,7 +39,7 @@ class GAN():
         img = self.generator(z)
 
         # For the combined model we will only train the generator
-        self.discriminator.trainable = False
+        self.discriminator.trainable = True
 
         # The discriminator takes generated images as input and determines validity
         validity = self.discriminator(img)
@@ -94,7 +94,7 @@ class GAN():
 
         # Load the dataset
         (X_train, _), (_, _) = mnist.load_data()
-        keras.callbacks.TensorBoard(log_dir='./logs/mnist', histogram_freq=30, batch_size=128, write_graph=True,
+        tb = keras.callbacks.TensorBoard(log_dir='./logs/mnist', histogram_freq=30, batch_size=128, write_graph=True,
                                     update_freq='epoch')
         # Rescale -1 to 1
         X_train = X_train / 127.5 - 1.
