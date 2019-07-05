@@ -688,7 +688,7 @@ class PM:
         # set the parameters.
         tf.set_random_seed(process_number)
         batch_size = 1
-        learning_rate = 0.002
+        learning_rate = 0.0002
         epsilon = 1e-4
 
         # reconstucted_network_adjacency_matrix is an adjacency matrix of the reconstructed FIs network.
@@ -753,8 +753,9 @@ class PM:
                 print(str(loss_val_D) + "\t" + str(loss_val_G) + "\n")
                 # print(loss_val_D)
                 # sys.exit()
-                writer.add_summary(summary1, (i + 209 * epoch))
-                writer.add_summary(summary2, (i + 209 * epoch))
+                if i%10 == 0:
+                    writer.add_summary(summary1, (i + 209 * epoch))
+                    writer.add_summary(summary2, (i + 209 * epoch))
                 # writer.add_summary(lossD,(i+209*epoch))
                 # writer.add_summary(lossG,(i+209*epoch))
                 print(str(i))

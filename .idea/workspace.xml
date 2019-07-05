@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7487bf5-427b-4d2f-9196-106b3f393e81" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tf_mnist.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_gen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gpu_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/gpu_gen.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,11 +49,23 @@
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_gen.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="203">
               <caret line="674" column="8" lean-forward="true" selection-start-line="674" selection-start-column="8" selection-end-line="674" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gpu_gen.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="344">
+              <caret line="752" column="50" selection-start-line="752" selection-start-column="50" selection-end-line="752" selection-end-column="50" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -92,6 +102,7 @@
       <find>valid</find>
       <find>plt</find>
       <find>lear</find>
+      <find>learning_r</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -103,12 +114,12 @@
         <option value="$PROJECT_DIR$/.gitattributes" />
         <option value="$PROJECT_DIR$/gpu_latest.txt" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/gpu_gen.py" />
         <option value="$PROJECT_DIR$/vizloss.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/mnist_gan.py" />
         <option value="$PROJECT_DIR$/tf_mnist.py" />
         <option value="$PROJECT_DIR$/data_gen.py" />
+        <option value="$PROJECT_DIR$/gpu_gen.py" />
       </list>
     </option>
   </component>
@@ -259,7 +270,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14232000" />
+    <option name="totallyTimeSpent" value="14326000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -338,16 +349,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/logs/gan_mrna/placeholder.txt">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gpu_gen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1928">
-          <caret line="754" column="28" selection-start-line="754" selection-start-column="28" selection-end-line="754" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/loss0_0.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -434,6 +435,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
           <caret line="674" column="8" lean-forward="true" selection-start-line="674" selection-start-column="8" selection-end-line="674" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gpu_gen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="752" column="50" selection-start-line="752" selection-start-column="50" selection-end-line="752" selection-end-column="50" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
