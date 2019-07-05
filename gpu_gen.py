@@ -631,7 +631,7 @@ class PM:
         D_real = discriminator(X, D_W1, D_W2)
         # D_real = D_real.assign( tf.where (tf.equal(D_real, tf.constant(0)), tf.constant(epsilon), D_real) )
         # loss function.
-        loss_D = tf.reduce_mean(D_real)-tf.reduce_mean(D_gene)
+        loss_D = -tf.reduce_mean(D_real)+tf.reduce_mean(D_gene)
         D_var_list = [D_W1, D_W2]
         G_var_list = [G_W]
 
@@ -644,7 +644,7 @@ class PM:
             minval=0.,
             maxval=1.
         )
-        differences = G - X
+        differences = G-X
         interpolates = X + (alpha * differences)
         gradients = tf.gradients(discriminator(interpolates,D_W1,D_W2), [interpolates])[0]
         slopes = tf.sqrt(tf.reduce_sum(tf.square(gradients), reduction_indices=[1]))

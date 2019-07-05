@@ -16,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gpu_gen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="652" column="16" selection-start-line="652" selection-start-column="16" selection-end-line="652" selection-end-column="16" />
+            <state relative-caret-position="200">
+              <caret line="636" lean-forward="true" selection-start-line="636" selection-end-line="636" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -28,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wgan_keras.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1727">
-              <caret line="143" column="32" selection-start-line="143" selection-start-column="27" selection-end-line="143" selection-end-column="32" />
+            <state relative-caret-position="-85">
+              <caret line="68" column="10" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="10" />
               <folding>
                 <element signature="e#1223#1238#0" expanded="true" />
               </folding>
@@ -124,6 +124,8 @@
       <find>wasser</find>
       <find>loss_d</find>
       <find>negat</find>
+      <find>grad</find>
+      <find>gradie</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -350,7 +352,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24046000" />
+    <option name="totallyTimeSpent" value="24789000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -572,8 +574,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wgan_keras.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1727">
-          <caret line="143" column="32" selection-start-line="143" selection-start-column="27" selection-end-line="143" selection-end-column="32" />
+        <state relative-caret-position="-85">
+          <caret line="68" column="10" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="10" />
           <folding>
             <element signature="e#1223#1238#0" expanded="true" />
           </folding>
@@ -582,8 +584,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gpu_gen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="652" column="16" selection-start-line="652" selection-start-column="16" selection-end-line="652" selection-end-column="16" />
+        <state relative-caret-position="200">
+          <caret line="636" lean-forward="true" selection-start-line="636" selection-end-line="636" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
