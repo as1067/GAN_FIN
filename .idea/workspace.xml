@@ -2,73 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7487bf5-427b-4d2f-9196-106b3f393e81" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gpu_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/gpu_gen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/10000.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/10000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/10200.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/10200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/10400.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/10400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/10600.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/10600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/10800.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/10800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/11000.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/11000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/11200.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/11200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/11400.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/11400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/11600.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/11600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/11800.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/11800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/12000.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/12000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/12200.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/12200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/12400.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/12400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/12600.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/12600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/12800.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/12800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/13000.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/13000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/13200.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/13200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/13400.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/13400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/13600.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/13600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/13800.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/13800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/14000.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/14000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/14200.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/14200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/14400.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/14400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/14600.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/14600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/14800.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/14800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/15000.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/15000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/15200.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/15200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/15400.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/15400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/15600.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/15600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/15800.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/15800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/16000.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/16000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/16200.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/16200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/16400.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/16400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/16600.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/16600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/16800.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/16800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/17000.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/17000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/17200.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/17200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/17400.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/17400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/5000.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/5000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/5200.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/5200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/5400.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/5400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/5600.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/5600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/5800.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/5800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/6000.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/6000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/6200.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/6200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/6400.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/6400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/6600.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/6600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/6800.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/6800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/7000.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/7000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/7200.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/7200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/7400.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/7400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/7600.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/7600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/7800.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/7800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/8000.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/8000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/8200.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/8200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/8400.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/8400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/8600.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/8600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/8800.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/8800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/9000.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/9000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/9200.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/9200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/9400.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/9400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/9600.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/9600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/9800.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/9800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loss1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/loss1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mnist_loss.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mnist_loss.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tf_mnist.py" beforeDir="false" afterPath="$PROJECT_DIR$/tf_mnist.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gpu_gen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="693" column="45" lean-forward="true" selection-start-line="693" selection-start-column="45" selection-end-line="693" selection-end-column="45" />
+            <state relative-caret-position="124">
+              <caret line="654" column="22" lean-forward="true" selection-start-line="654" selection-start-column="22" selection-end-line="654" selection-end-column="22" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -91,8 +26,27 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/images/2000.png">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/tf_mnist.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2205">
+              <caret line="147" column="23" selection-start-line="147" selection-start-column="23" selection-end-line="147" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mnist_gan.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1330">
+              <caret line="130" column="35" selection-start-line="130" selection-start-column="35" selection-end-line="130" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#47#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -145,6 +99,7 @@
       <find>divi</find>
       <find>loss</find>
       <find>inds</find>
+      <find>sys.ex</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -158,9 +113,9 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/vizloss.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/tf_mnist.py" />
         <option value="$PROJECT_DIR$/data_gen.py" />
         <option value="$PROJECT_DIR$/mnist_gan.py" />
+        <option value="$PROJECT_DIR$/tf_mnist.py" />
         <option value="$PROJECT_DIR$/gpu_gen.py" />
       </list>
     </option>
@@ -226,7 +181,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.gpu_gen">
+  <component name="RunManager" selected="Python.tf_mnist">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="GAN_FIN" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -309,6 +264,25 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="tf_mnist" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GAN_FIN" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tf_mnist.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="vizloss" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GAN_FIN" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -330,6 +304,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.tf_mnist" />
         <item itemvalue="Python.gpu_gen" />
         <item itemvalue="Python.mnist_gan" />
         <item itemvalue="Python.data_gen" />
@@ -352,7 +327,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19675000" />
+    <option name="totallyTimeSpent" value="20500000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -490,23 +465,8 @@
     <entry file="file://$PROJECT_DIR$/images/22400.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/mnist_gan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="130" column="35" selection-start-line="130" selection-start-column="35" selection-end-line="130" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/images/29800.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mnist_loss.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2724" />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data_gen.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -514,16 +474,6 @@
           <caret line="698" column="16" selection-start-line="698" selection-start-column="16" selection-end-line="698" selection-end-column="16" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tf_mnist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-590">
-          <caret line="143" column="6" selection-start-line="143" selection-start-column="2" selection-end-line="143" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -560,10 +510,33 @@
     <entry file="file://$PROJECT_DIR$/images/2000.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/mnist_loss.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mnist_gan.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1330">
+          <caret line="130" column="35" selection-start-line="130" selection-start-column="35" selection-end-line="130" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tf_mnist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2205">
+          <caret line="147" column="23" selection-start-line="147" selection-start-column="23" selection-end-line="147" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gpu_gen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="693" column="45" lean-forward="true" selection-start-line="693" selection-start-column="45" selection-end-line="693" selection-end-column="45" />
+        <state relative-caret-position="124">
+          <caret line="654" column="22" lean-forward="true" selection-start-line="654" selection-start-column="22" selection-end-line="654" selection-end-column="22" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>

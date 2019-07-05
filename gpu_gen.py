@@ -618,7 +618,7 @@ class PM:
         batch_size = 1
         learning_rate = 0.0002
         epsilon = 1e-4
-
+        LAMBDA = 19
         # reconstucted_network_adjacency_matrix is an adjacency matrix of the reconstructed FIs network.
         reconstucted_network_adjacency_matrix, X, Z, G_W, D_W1, D_W2 = prepare(adjacency_matrix, n_genes, 512, n_genes,
                                                                                0.01)
@@ -636,8 +636,30 @@ class PM:
         G_var_list = [G_W]
 
         # define optimizer.
-        train_D = tf.train.AdamOptimizer(learning_rate).minimize(loss_D, var_list=D_var_list)
-        train_G = tf.train.AdamOptimizer(learning_rate).minimize(loss_G, var_list=G_var_list)
+        loss_G = -tf.reduce_mean(D_gene)
+        loss_D = tf.reduce_mean(D_gene) - tf.reduce_mean(D_real)
+
+        alpha = tf.random_uniform(
+            shape=[batch_size, 1],
+            minval=0.,
+            maxval=1.
+        )
+        differences = G - X
+        interpolates = X + (alpha * differences)
+        gradients = tf.gradients(discriminator(interpolates,D_W1,D_W2), [interpolates])[0]
+        slopes = tf.sqrt(tf.reduce_sum(tf.square(gradients), reduction_indices=[1]))
+        gradient_penalty = tf.reduce_mean((slopes - 1.) ** 2)
+        loss_D += LAMBDA * gradient_penalty
+        train_G = tf.train.AdamOptimizer(
+            learning_rate=1e-4,
+            beta1=0.5,
+            beta2=0.9
+        ).minimize(loss_G, var_list=G_var_list)
+        train_D = tf.train.AdamOptimizer(
+            learning_rate=1e-4,
+            beta1=0.5,
+            beta2=0.9
+        ).minimize(loss_D, var_list=D_var_list)
 
         n_iter = data_for_GANs.shape[0]
         sess = tf.Session()

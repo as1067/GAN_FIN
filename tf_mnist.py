@@ -142,9 +142,8 @@ with tf.variable_scope('D') as scope:
 
 
 # loss for each network
-eps = 1e-2
-D_loss = tf.reduce_mean(-tf.log(D_real + eps) - tf.log(1 - D_fake + eps))
-G_loss = tf.reduce_mean(-tf.log(D_fake + eps))
+D_loss = tf.reduce_mean(D_real) - tf.reduce_mean(D_fake)
+G_loss = -tf.reduce_mean(D_fake)
 
 # trainable variables for each network
 t_vars = tf.trainable_variables()
