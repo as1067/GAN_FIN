@@ -698,9 +698,9 @@ class PM:
         G = generator(G_W, reconstucted_network_adjacency_matrix, Z)
 
         D_gene = discriminator(G, D_W1, D_W2)
-        D_gene[D_gene == 0] = epsilon
+        D_gene = D_gene.assign( tf.where (tf.equal(D_gene, tf.constant(0)), tf.constant(epsilon), D_gene) )
         D_real = discriminator(X, D_W1, D_W2)
-        D_real[D_real == 0] = epsilon
+        D_real = D_real.assign( tf.where (tf.equal(D_real, tf.constant(0)), tf.constant(epsilon), D_real) )
         # loss function.
         loss_D = tf.reduce_mean(tf.log(D_real) + tf.log(1 - D_gene))
         loss_G = tf.reduce_mean(tf.log(D_gene))

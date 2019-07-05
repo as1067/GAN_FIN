@@ -27,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gpu_gen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="699" column="41" lean-forward="true" selection-start-line="699" selection-start-column="41" selection-end-line="699" selection-end-column="41" />
+            <state relative-caret-position="278">
+              <caret line="704" column="68" lean-forward="true" selection-start-line="704" selection-start-column="68" selection-end-line="704" selection-end-column="68" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -233,7 +233,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7270000" />
+    <option name="totallyTimeSpent" value="7657000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -322,8 +322,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gpu_gen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="699" column="41" lean-forward="true" selection-start-line="699" selection-start-column="41" selection-end-line="699" selection-end-column="41" />
+        <state relative-caret-position="278">
+          <caret line="704" column="68" lean-forward="true" selection-start-line="704" selection-start-column="68" selection-end-line="704" selection-end-column="68" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
