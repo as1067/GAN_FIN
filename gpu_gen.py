@@ -572,7 +572,7 @@ class PM:
 
         # generator of GANs.
         def generator(G_W, reconstucted_network_adjacency_matrix, noise_z):
-            output = tf.nn.leaky_relu(tf.matmul(noise_z, reconstucted_network_adjacency_matrix * (G_W * tf.transpose(G_W))))
+            output = tf.matmul(noise_z, reconstucted_network_adjacency_matrix * (G_W * tf.transpose(G_W)))
             return output
 
         def get_weights():
