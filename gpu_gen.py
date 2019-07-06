@@ -724,8 +724,8 @@ class PM:
                 #     writer.add_summary(summary2, (i + 209 * epoch))
                 # writer.add_summary(lossD,(i+209*epoch))
                 # writer.add_summary(lossG,(i+209*epoch))
-            loss.write(str(loss_val_D) + "\t" + str(loss_val_G) + "\n")
-            print(str(loss_val_D) + "\t" + str(loss_val_G) + "\n")
+            loss.write(str(np.mean(loss_val_D_list)) + "\t" + str(np.mean(loss_val_G)) + "\n")
+            print(str(np.mean(loss_val_D_list)) + "\t" + str(np.mean(loss_val_G)) + "\n")
             print(str(epoch))
         # tf.train.Saver().save(sess,"checkpoint/model.txt")
 
