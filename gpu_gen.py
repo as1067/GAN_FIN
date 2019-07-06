@@ -572,7 +572,7 @@ class PM:
 
         # generator of GANs.
         def generator(G_W, reconstucted_network_adjacency_matrix, noise_z):
-            output = tf.nn.relu(tf.matmul(noise_z, reconstucted_network_adjacency_matrix * (G_W * tf.transpose(G_W))))
+            output = tf.nn.leaky_relu(tf.matmul(noise_z, reconstucted_network_adjacency_matrix * (G_W * tf.transpose(G_W))))
             return output
 
         def get_weights():
@@ -580,7 +580,7 @@ class PM:
 
         # discriminator of GANs.
         def discriminator(inputs, D_W1, D_W2):
-            hidden = tf.nn.relu(tf.matmul(inputs, D_W1))
+            hidden = tf.nn.leaky_relu(tf.matmul(inputs, D_W1))
             output = tf.matmul(hidden, D_W2)
             return output
 
@@ -619,7 +619,7 @@ class PM:
         batch_size = 1
         learning_rate = 0.0002
         epsilon = 1e-4
-        LAMBDA = 19
+        LAMBDA = 10
         # reconstucted_network_adjacency_matrix is an adjacency matrix of the reconstructed FIs network.
         reconstucted_network_adjacency_matrix, X, Z, G_W, D_W1, D_W2 = prepare(adjacency_matrix, n_genes, 512, n_genes,
                                                                                0.01)
