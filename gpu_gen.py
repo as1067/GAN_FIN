@@ -689,7 +689,7 @@ class PM:
         # tf.train.Saver().save(sess,"checkpoint/start.txt")
         loss = open("loss"+str(n)+".txt", "w")
         print("training")
-        for epoch in range(1000):
+        for epoch in range(10000):
             loss_val_D_list = []
             loss_val_G_list = []
             inds = sample(datas,50)
@@ -727,7 +727,7 @@ class PM:
             loss.write(str(np.mean(loss_val_D_list)) + "\t" + str(np.mean(loss_val_G)) + "\n")
             print(str(np.mean(loss_val_D_list)) + "\t" + str(np.mean(loss_val_G)) + "\n")
             print(str(epoch))
-        tf.train.Saver().save(sess,"checkpoint/model.txt")
+        # tf.train.Saver().save(sess,"checkpoint/model.txt")
 
         print(' converge ', 'Epoch:', '%04d' % (epoch + 1), 'n_iter :',
               '%04d' % n_iter, 'D_loss : {:.4}'.format(np.mean(loss_val_D_list)),
