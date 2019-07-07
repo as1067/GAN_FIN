@@ -15,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gpu_gen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="585" column="55" selection-start-line="585" selection-start-column="55" selection-end-line="585" selection-end-column="55" />
+            <state relative-caret-position="109">
+              <caret line="697" column="32" lean-forward="true" selection-start-line="697" selection-start-column="32" selection-end-line="697" selection-end-column="32" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -53,7 +53,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>inds</find>
       <find>sys.ex</find>
       <find>wgan-gp</find>
       <find>wassers</find>
@@ -83,6 +82,7 @@
       <find>generator</find>
       <find>reco</find>
       <find>adjacen</find>
+      <find>genera</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -307,7 +307,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45123000" />
+    <option name="totallyTimeSpent" value="45572000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -572,8 +572,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gpu_gen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="585" column="55" selection-start-line="585" selection-start-column="55" selection-end-line="585" selection-end-column="55" />
+        <state relative-caret-position="109">
+          <caret line="697" column="32" lean-forward="true" selection-start-line="697" selection-start-column="32" selection-end-line="697" selection-end-column="32" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>

@@ -697,7 +697,7 @@ class PM:
             inds = sample(datas,50)
             if epoch % 100 == 0:
                 for i in range(100):
-                    f = open("generated_data/model9data/sample" + str(epoch) + "_" + str(i) + ".txt", "w")
+                    f = open("generated_data/model"+str(n)+"data/sample" + str(epoch) + "_" + str(i) + ".txt", "w")
                     noise = get_noise(1, n_genes)
                     out = sess.run([G], feed_dict={Z: noise})
                     # line = ""
