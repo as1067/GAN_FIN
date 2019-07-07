@@ -2,58 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7487bf5-427b-4d2f-9196-106b3f393e81" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_101.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_101.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_103.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_103.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_106.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_106.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_110.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_110.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_111.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_111.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_112.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_112.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_131.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_131.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_133.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_133.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_14.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_148.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_148.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_183.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_183.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_185.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_185.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_188.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_188.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_193.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_193.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_201.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_201.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_203.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_203.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_21.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_21.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_216.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_216.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_220.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_220.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_229.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_229.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_231.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_231.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_234.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_234.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_250.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_250.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_254.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_254.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_265.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_265.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_269.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_269.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_279.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_279.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_284.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_284.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_299.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_299.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_305.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_305.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_319.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_319.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_32.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_32.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_328.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_328.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_346.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_346.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_347.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_347.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_359.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_359.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_365.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_365.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_385.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_385.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_397.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_397.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_403.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_403.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_408.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_408.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_42.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_42.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_50.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_50.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_53.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_53.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_58.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_58.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_60.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_60.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_74.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_74.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_77.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_77.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_85.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_85.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_data_98.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_98.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gpu_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/gpu_gen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gpu_latest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gpu_latest.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,10 +19,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gpu_gen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
+            <state relative-caret-position="-1955">
               <caret line="580" lean-forward="true" selection-start-line="580" selection-end-line="580" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
@@ -99,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gpu_latest.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="1" selection-start-column="1" selection-end-column="1" />
+              <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -136,7 +85,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>plt</find>
       <find>lear</find>
       <find>learning_rat</find>
       <find>learning_r</find>
@@ -166,6 +114,7 @@
       <find>epoch</find>
       <find>exam</find>
       <find>loss</find>
+      <find>loss =</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -183,8 +132,8 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/vizloss.py" />
         <option value="$PROJECT_DIR$/data_gen.py" />
-        <option value="$PROJECT_DIR$/gpu_latest.txt" />
         <option value="$PROJECT_DIR$/gpu_gen.py" />
+        <option value="$PROJECT_DIR$/gpu_latest.txt" />
       </list>
     </option>
   </component>
@@ -390,12 +339,12 @@
       <option name="presentableId" value="Default" />
       <updated>1562265052188</updated>
       <workItem from="1562265057845" duration="2148000" />
-      <workItem from="1562457932812" duration="6384000" />
+      <workItem from="1562457932812" duration="6473000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34879000" />
+    <option name="totallyTimeSpent" value="34968000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -625,13 +574,6 @@
         <state relative-caret-position="-162507" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gpu_latest.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data_gen.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1791">
@@ -644,11 +586,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gpu_gen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
+        <state relative-caret-position="-1955">
           <caret line="580" lean-forward="true" selection-start-line="580" selection-end-line="580" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gpu_latest.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>
