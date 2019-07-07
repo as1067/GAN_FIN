@@ -584,7 +584,7 @@ class PM:
         # discriminator of GANs.
         def discriminator(inputs, D_W1, D_W2,D_W3):
             hidden = tf.tanh(tf.matmul(inputs, D_W1))
-            hidden2 = tf.nn.leaky_relu(hidden,D_W2)
+            hidden2 = tf.nn.leaky_relu(tf.matmul(hidden,D_W2))
             output = tf.asinh(tf.matmul(hidden2, D_W3))
             return output
 
