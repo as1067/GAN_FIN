@@ -693,10 +693,9 @@ class PM:
             loss_val_D_list = []
             loss_val_G_list = []
             inds = sample(datas,50)
-            for i in inds:
-                batch_xs = data_for_GANs[i].reshape(1, -1)
-                if epoch % 100 == 0:
-                    f = open("generated_data/sample"+str(n)+"_" + str(epoch) + ".txt", "w")
+            if epoch % 100 == 0:
+                for i in range(100):
+                    f = open("generated_data/model9data/sample" + str(epoch) + "_" + str(i) + ".txt", "w")
                     noise = get_noise(1, n_genes)
                     out = sess.run([G], feed_dict={Z: noise})
                     # line = ""
@@ -706,6 +705,8 @@ class PM:
                     for num in out[0][0]:
                         f.write(str(num) + "\n")
                     f.close()
+            for i in inds:
+                batch_xs = data_for_GANs[i].reshape(1, -1)
                 # print(batch_xs)
                 # sys.exit()
                 # print(batch_xs.shape)
