@@ -699,13 +699,12 @@ class PM:
                     f = open("generated_data/sample"+str(n)+"_" + str(epoch) + ".txt", "w")
                     noise = get_noise(1, n_genes)
                     out = sess.run([G], feed_dict={Z: noise})
-                    line = ""
-                    test = np.asarray(out)
+                    # line = ""
+                    # test = np.asarray(out)
                     # print(test.shape)
                     # print(len(out[0][0]))
                     for num in out[0][0]:
-                        line += str(num) + ","
-                    f.write(line)
+                        f.write(str(num) + "\n")
                     f.close()
                 # print(batch_xs)
                 # sys.exit()
