@@ -196,24 +196,22 @@ def intersetion_data(raw_mRNA, raw_edges, raw_clinical_file, gs, num2gene, gene2
 
 # normalizing data for each sample by z-scoring.
 def zscore(data):
-	print("zscoring")
-	print(data.shape)
-	# print(data)
-	len_row_gene = data.shape[0]
-	len_column_sample = data.shape[1]
-	column_wise = data.T
-	zscored_data = np.zeros((len_row_gene, len_column_sample))
-	for column_sample in range(len_column_sample):
-		mu = statistics.mean(column_wise[column_sample])
-		sigma = statistics.stdev(column_wise[column_sample])
-		if mu != 0 and sigma != 0:
-			for row_gene in range(len_row_gene):
-				x = data[row_gene][column_sample]
-				zscored_data[row_gene][column_sample] = (x - mu) / sigma
-		else:
-			print('Warning!z-scoring!')
-
-	return zscored_data
+    print("zscoring")
+    print(data.shape)
+    # print(data)
+    len_row_gene = data.shape[0]
+    len_column_sample = data.shape[1]
+    # column_wise = data.T
+    zscored_data = np.zeros((len_row_gene, len_column_sample))
+    for gene in range(len_row_gene):
+        mu = statistics.mean(data[gene])
+        sigma = statistics.stdev(data[gene])
+        # print(str(mu)+"\t"+str(sigma))
+        if sigma != 0:
+            for sample in range(len_column_sample):
+                x = data[gene][sample]
+                zscored_data[gene][sample] = (x - mu) / sigma
+    return zscored_data
 
 
 # seperate patients who have bad prognosis and patients who have good prognosis.
