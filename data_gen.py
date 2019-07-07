@@ -686,6 +686,15 @@ class PM:
 		# 	f.close()
 		# perform GANs.
 		# tf.train.Saver().save(sess,"checkpoint/start.txt")
+		inds = sample(datas, 50)
+		for i in inds:
+			example = data_for_GANs[i].reshape(1, -1)
+			ex = example[0]
+			f = open("example/example_data_"+str(i)+".txt", "w")
+			for gene in ex:
+				f.write(str(gene) + "\n")
+			f.close()
+		sys.exit()
 		print("training")
 		for epoch in range(30000):
 			loss_val_D_list = []
@@ -716,14 +725,6 @@ class PM:
 			  'G_loss : {:.4}'.format(np.mean(loss_val_G_list)))
 		sess.close()
 
-	# example = data_for_GANs[0].reshape(1,-1)
-	# ex = example[0]
-	# f = open("example_data.txt","w")
-	# line = ""
-	# for gene in ex:
-	# 	line+=str(gene)+","
-	# f.write(line)
-	# f.close()
 
 	# create an adjacency matrix form edge_list.
 	def make_adjacencyMatrix(self, edge_list):

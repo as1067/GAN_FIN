@@ -554,16 +554,14 @@ class PM:
 
             # noise for generator.
             Z = tf.placeholder(tf.float32, [None, n_noise])
-            # Generator weights.
+            # Generator weights
             gw1 = tf.Variable(tf.random_normal([n_noise, n_genes], stddev=0.01))
             gw2 = tf.Variable(tf.random_normal([n_genes, n_genes], stddev=0.01))
 
 
-            # Discriminator weights.
+            # Discriminator weights
             D_W1 = tf.Variable(tf.random_normal([n_input, n_hidden], stddev=0.01))
-            D_W2 = tf.Variable(tf.random_normal([n_hidden, int(n_hidden/2)], stddev=0.01))
-            D_W3 = tf.Variable(tf.random_normal([int(n_hidden/2), 1], stddev=0.01))
-
+            D_W2 = tf.Variable(tf.random_normal([n_hidden, 1], stddev=0.01))
 
             # Set up weight summary
             tf.summary.histogram("Discriminator weights 1", D_W1)
@@ -572,7 +570,7 @@ class PM:
             tf.summary.histogram("Generator weights 2", gw2)
 
 
-            return reconstucted_network_adjacency_matrix, X, Z, gw1,gw2, D_W1, D_W2,D_W3
+            return reconstucted_network_adjacency_matrix, X, Z, gw1,gw2, D_W1, D_W2
 
         # generator of GANs.
         def generator(gw1, gw2, reconstucted_network_adjacency_matrix, noise_z):
@@ -582,10 +580,9 @@ class PM:
 
 
         # discriminator of GANs.
-        def discriminator(inputs, D_W1, D_W2,D_W3):
-            hidden = tf.tanh(tf.matmul(inputs, D_W1))
-            hidden2 = tf.nn.leaky_relu(tf.matmul(hidden,D_W2))
-            output = tf.asinh(tf.matmul(hidden2, D_W3))
+        def discriminator(inputs, D_W1, D_W2):
+            hidden = tf.nn.leaky_relu(tf.matmul(inputs, D_W1))
+            output = tf.asinh(tf.matmul(hidden, D_W2))
             return output
 
         # make random variables for generator.
@@ -625,18 +622,18 @@ class PM:
         epsilon = 1e-4
         LAMBDA = 10
         # reconstucted_network_adjacency_matrix is an adjacency matrix of the reconstructed FIs network.
-        reconstucted_network_adjacency_matrix, X, Z, gw1,gw2, D_W1, D_W2,D_W3 = prepare(adjacency_matrix, n_genes, 512, n_genes,
+        reconstucted_network_adjacency_matrix, X, Z, gw1,gw2, D_W1, D_W2 = prepare(adjacency_matrix, n_genes, 512, n_genes,
                                                                                0.01)
 
         G = generator(gw1, gw2, reconstucted_network_adjacency_matrix, Z)
 
-        D_gene = discriminator(G, D_W1, D_W2,D_W3)
+        D_gene = discriminator(G, D_W1, D_W2)
         # D_gene = D_gene.assign( tf.where (tf.equal(D_gene, tf.constant(0)), tf.constant(epsilon), D_gene) )
-        D_real = discriminator(X, D_W1, D_W2,D_W3)
+        D_real = discriminator(X, D_W1, D_W2)
         # D_real = D_real.assign( tf.where (tf.equal(D_real, tf.constant(0)), tf.constant(epsilon), D_real) )
         # loss function.
         loss_D = -tf.reduce_mean(D_real)+tf.reduce_mean(D_gene)
-        D_var_list = [D_W1, D_W2,D_W3]
+        D_var_list = [D_W1, D_W2]
         G_var_list = [gw1,gw2]
 
         # define optimizer.
@@ -650,7 +647,7 @@ class PM:
         )
         differences = G-X
         interpolates = X + (alpha * differences)
-        gradients = tf.gradients(discriminator(interpolates,D_W1,D_W2,D_W3), [interpolates])[0]
+        gradients = tf.gradients(discriminator(interpolates,D_W1,D_W2), [interpolates])[0]
         slopes = tf.sqrt(tf.reduce_sum(tf.square(gradients), reduction_indices=[1]))
         gradient_penalty = tf.reduce_mean((slopes - 1.) ** 2)
         loss_D += LAMBDA * gradient_penalty
