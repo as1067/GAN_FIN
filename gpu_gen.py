@@ -201,15 +201,15 @@ def zscore(data):
     # print(data)
     len_row_gene = data.shape[0]
     len_column_sample = data.shape[1]
-    column_wise = data.T
+    # column_wise = data.T
     zscored_data = np.zeros((len_row_gene, len_column_sample))
-    for column_sample in range(len_column_sample):
-        mu = statistics.mean(column_wise[column_sample])
-        sigma = statistics.stdev(column_wise[column_sample])
+    for gene in range(len_row_gene):
+        mu = statistics.mean(data[gene])
+        sigma = statistics.stdev(data[gene])
         if mu != 0 and sigma != 0:
-            for row_gene in range(len_row_gene):
-                x = data[row_gene][column_sample]
-                zscored_data[row_gene][column_sample] = (x - mu) / sigma
+            for sample in range(len_column_sample):
+                x = data[gene][sample]
+                zscored_data[gene][sample] = (x - mu) / sigma
         else:
             print('Warning!z-scoring!')
 
