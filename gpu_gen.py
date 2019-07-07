@@ -576,8 +576,8 @@ class PM:
 
         # generator of GANs.
         def generator(gw1, gw2, reconstucted_network_adjacency_matrix, noise_z):
-            hidden = tf.nnet.leaky_relu(tf.matmul(noise_z, reconstucted_network_adjacency_matrix * (gw1 * tf.transpose(gw1))))
-            output = tf.tanh(tf.matmul(hidden,reconstucted_network_adjacency_matrix*(gw2*tf.transpose(gw2))))
+            hidden = tf.tanh(tf.matmul(noise_z, reconstucted_network_adjacency_matrix * (gw1 * tf.transpose(gw1))))
+            output = tf.asinh(tf.matmul(hidden,reconstucted_network_adjacency_matrix*(gw2*tf.transpose(gw2))))
             return output
 
 
