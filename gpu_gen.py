@@ -583,8 +583,8 @@ class PM:
         # discriminator of GANs.
         def discriminator(inputs, D_W1, D_W2,D_W3):
             hidden = tf.nn.leaky_relu(tf.matmul(inputs, D_W1))
-            hidden = tf.nn.leaky_relu(tf.matmul(inputs, D_W2))
-            output = tf.matmul(hidden, D_W3)
+            hidden2 = tf.nn.leaky_relu(tf.matmul(hidden, D_W2))
+            output = tf.matmul(hidden2, D_W3)
             return output
 
         # make random variables for generator.
