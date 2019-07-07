@@ -206,13 +206,11 @@ def zscore(data):
     for gene in range(len_row_gene):
         mu = statistics.mean(data[gene])
         sigma = statistics.stdev(data[gene])
-        if mu != 0 and sigma != 0:
+        print(str(mu)+"\t"+str(sigma))
+        if sigma != 0:
             for sample in range(len_column_sample):
                 x = data[gene][sample]
                 zscored_data[gene][sample] = (x - mu) / sigma
-        else:
-            print('Warning!z-scoring!')
-
     return zscored_data
 
 
