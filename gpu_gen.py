@@ -560,8 +560,8 @@ class PM:
 
             # Discriminator weights
             D_W1 = tf.Variable(tf.random_normal([n_input, n_hidden], stddev=0.01))
-            D_W2 = tf.Variable(tf.random_normal([n_hidden, 1], stddev=0.01))
-            D_W3 = tf.Variable(tf.random_normal([n_hidden, 1], stddev=0.01))
+            D_W2 = tf.Variable(tf.random_normal([n_hidden, int(n_hidden/2)], stddev=0.01))
+            D_W3 = tf.Variable(tf.random_normal([int(n_hidden/2), 1], stddev=0.01))
 
             # Set up weight summary
             tf.summary.histogram("Discriminator weights 1", D_W1)
