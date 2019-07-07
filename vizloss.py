@@ -4,7 +4,7 @@ import csv
 loss_d = []
 loss_g = []
 x = []
-filename = "loss1.txt"
+filename = "loss6.txt"
 with open(filename) as f:
     reader = csv.reader(f,delimiter="\t")
     count = 0
@@ -16,5 +16,7 @@ with open(filename) as f:
         count+=1
 plt.scatter(x,loss_d,color = "r")
 plt.scatter(x,loss_g,color = "g")
+plt.xlabel("Epochs")
+plt.ylabel("Loss")
 
 plt.show()
