@@ -555,7 +555,9 @@ class PM:
             # noise for generator.
             Z = tf.placeholder(tf.float32, [None, n_noise])
             # G_W is for generator.
-            G_W = tf.Variable(tf.random_normal([n_noise, n_genes], stddev=0.01))
+            gw1 = tf.Variable(tf.random_normal([n_noise, n_genes], stddev=0.01))
+            gw2 = tf.Variable(tf.random_normal([n_genes, n_genes], stddev=0.01))
+
 
             # D_W1 is for discriminator.
             D_W1 = tf.Variable(tf.random_normal([n_input, n_hidden], stddev=0.01))
@@ -566,17 +568,18 @@ class PM:
             # Set up weight summary
             tf.summary.histogram("Discriminator weights 1", D_W1)
             tf.summary.histogram("Discriminator weights 2", D_W2)
-            tf.summary.histogram("Generator weights", G_W)
+            tf.summary.histogram("Generator weights 1", gw1)
+            tf.summary.histogram("Generator weights 2", gw2)
 
-            return reconstucted_network_adjacency_matrix, X, Z, G_W, D_W1, D_W2
+
+            return reconstucted_network_adjacency_matrix, X, Z, gw1,gw2, D_W1, D_W2
 
         # generator of GANs.
-        def generator(G_W, reconstucted_network_adjacency_matrix, noise_z):
-            output = tf.matmul(noise_z, reconstucted_network_adjacency_matrix * (G_W * tf.transpose(G_W)))
+        def generator(gw1, gw2, reconstucted_network_adjacency_matrix, noise_z):
+            hidden = tf.nnet.leaky_relu(tf.matmul(noise_z, reconstucted_network_adjacency_matrix * (gw1 * tf.transpose(gw1))))
+            output = tf.tanh(tf.matmul(hidden,reconstucted_network_adjacency_matrix*(gw2*tf.transpose(gw2))))
             return output
 
-        def get_weights():
-            return G_W
 
         # discriminator of GANs.
         def discriminator(inputs, D_W1, D_W2):
@@ -621,10 +624,10 @@ class PM:
         epsilon = 1e-4
         LAMBDA = 10
         # reconstucted_network_adjacency_matrix is an adjacency matrix of the reconstructed FIs network.
-        reconstucted_network_adjacency_matrix, X, Z, G_W, D_W1, D_W2 = prepare(adjacency_matrix, n_genes, 512, n_genes,
+        reconstucted_network_adjacency_matrix, X, Z, gw1,gw2, D_W1, D_W2 = prepare(adjacency_matrix, n_genes, 512, n_genes,
                                                                                0.01)
 
-        G = generator(G_W, reconstucted_network_adjacency_matrix, Z)
+        G = generator(gw1, gw2, reconstucted_network_adjacency_matrix, Z)
 
         D_gene = discriminator(G, D_W1, D_W2)
         # D_gene = D_gene.assign( tf.where (tf.equal(D_gene, tf.constant(0)), tf.constant(epsilon), D_gene) )
@@ -633,7 +636,7 @@ class PM:
         # loss function.
         loss_D = -tf.reduce_mean(D_real)+tf.reduce_mean(D_gene)
         D_var_list = [D_W1, D_W2]
-        G_var_list = [G_W]
+        G_var_list = [gw1,gw2]
 
         # define optimizer.
         # loss_G = -tf.reduce_mean(D_gene)
@@ -688,14 +691,14 @@ class PM:
         # tf.train.Saver().save(sess,"checkpoint/start.txt")
         loss = open("loss"+str(n)+".txt", "w")
         print("training")
-        for epoch in range(30000):
+        for epoch in range(10000):
             loss_val_D_list = []
             loss_val_G_list = []
             inds = sample(datas,50)
             for i in inds:
                 batch_xs = data_for_GANs[i].reshape(1, -1)
                 if epoch % 100 == 0:
-                    f = open("generated_data/sample_" + str(epoch) + ".txt", "w")
+                    f = open("generated_data/sample"+str(n)+"_" + str(epoch) + ".txt", "w")
                     noise = get_noise(1, n_genes)
                     out = sess.run([G], feed_dict={Z: noise})
                     line = ""

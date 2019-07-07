@@ -17,6 +17,8 @@ import sys
 import argparse
 import csv
 import statistics
+from keras import backend as K
+from random import sample
 
 random.seed(0)
 np.random.seed(0)
@@ -570,7 +572,7 @@ class PM:
 
 		# generator of GANs.
 		def generator(G_W, reconstucted_network_adjacency_matrix, noise_z):
-			output = tf.nn.relu(tf.matmul(noise_z, reconstucted_network_adjacency_matrix * (G_W * tf.transpose(G_W))))
+			output = tf.matmul(noise_z, reconstucted_network_adjacency_matrix * (G_W * tf.transpose(G_W)))
 			return output
 
 		def get_weights():
@@ -578,8 +580,8 @@ class PM:
 
 		# discriminator of GANs.
 		def discriminator(inputs, D_W1, D_W2):
-			hidden = tf.nn.relu(tf.matmul(inputs, D_W1))
-			output = tf.nn.sigmoid(tf.matmul(hidden, D_W2))
+			hidden = tf.nn.leaky_relu(tf.matmul(inputs, D_W1))
+			output = tf.matmul(hidden, D_W2)
 			return output
 
 		# make random variables for generator.
@@ -617,7 +619,7 @@ class PM:
 		batch_size = 1
 		learning_rate = 0.0002
 		epsilon = 1e-4
-
+		LAMBDA = 10
 		# reconstucted_network_adjacency_matrix is an adjacency matrix of the reconstructed FIs network.
 		reconstucted_network_adjacency_matrix, X, Z, G_W, D_W1, D_W2 = prepare(adjacency_matrix, n_genes, 512, n_genes,
 																			   0.01)
@@ -629,14 +631,36 @@ class PM:
 		D_real = discriminator(X, D_W1, D_W2)
 		# D_real = D_real.assign( tf.where (tf.equal(D_real, tf.constant(0)), tf.constant(epsilon), D_real) )
 		# loss function.
-		loss_D = tf.reduce_mean(tf.log(tf.cosh(1-D_real)) + tf.log(tf.cosh(D_gene)))
-		loss_G = tf.reduce_mean(tf.log(tf.cosh(1-D_gene)))
+		loss_D = -tf.reduce_mean(D_real)+tf.reduce_mean(D_gene)
 		D_var_list = [D_W1, D_W2]
 		G_var_list = [G_W]
 
 		# define optimizer.
-		train_D = tf.train.AdamOptimizer(learning_rate).minimize(loss_D, var_list=D_var_list)
-		train_G = tf.train.AdamOptimizer(learning_rate).minimize(loss_G, var_list=G_var_list)
+		# loss_G = -tf.reduce_mean(D_gene)
+		# loss_D = tf.reduce_mean(D_gene) - tf.reduce_mean(D_real)
+
+		alpha = tf.random_uniform(
+			shape=[batch_size, 1],
+			minval=0.,
+			maxval=1.
+		)
+		differences = G-X
+		interpolates = X + (alpha * differences)
+		gradients = tf.gradients(discriminator(interpolates,D_W1,D_W2), [interpolates])[0]
+		slopes = tf.sqrt(tf.reduce_sum(tf.square(gradients), reduction_indices=[1]))
+		gradient_penalty = tf.reduce_mean((slopes - 1.) ** 2)
+		loss_D += LAMBDA * gradient_penalty
+		loss_G =-tf.reduce_mean(D_gene)
+		train_G = tf.train.AdamOptimizer(
+			learning_rate=1e-4,
+			beta1=0.5,
+			beta2=0.9
+		).minimize(loss_G, var_list=G_var_list)
+		train_D = tf.train.AdamOptimizer(
+			learning_rate=1e-4,
+			beta1=0.5,
+			beta2=0.9
+		).minimize(loss_D, var_list=D_var_list)
 
 		n_iter = data_for_GANs.shape[0]
 		sess = tf.Session()
@@ -644,6 +668,9 @@ class PM:
 		summaries = tf.summary.merge_all()
 		sess.run(tf.global_variables_initializer())
 		loss_val_D, loss_val_G = 0, 0
+		datas = []
+		for i in range(n_iter):
+			datas.append(i)
 		# print("generating compare data")
 		# start = process_number*10+foldnum*10
 		# for i in range(start,start+10):
@@ -659,50 +686,35 @@ class PM:
 		# 	f.close()
 		# perform GANs.
 		# tf.train.Saver().save(sess,"checkpoint/start.txt")
-		loss = open("loss"+str(n)+".txt", "w")
 		print("training")
 		for epoch in range(30000):
 			loss_val_D_list = []
 			loss_val_G_list = []
-			for i in range(n_iter):
+			inds = sample(datas, 50)
+			for i in inds:
 				batch_xs = data_for_GANs[i].reshape(1, -1)
 				# print(batch_xs)
+				# sys.exit()
 				# print(batch_xs.shape)
 				# sys.exit()
 				noise = get_noise(1, n_genes)
 				# _, loss_val_D = sess.run([train_D, loss_D], feed_dict={X: batch_xs, Z: noise})
-				# _, loss_val_G = sess.run([train_G, loss_G], feed_dict={Z: noise})
+				# _, loss_val_G = sess.run([train_G, loss_G], feed_dict={X:batch_xs,Z: noise})
 				_, loss_val_D, summary1 = sess.run([train_D, loss_D, summaries], feed_dict={X: batch_xs, Z: noise})
 				_, loss_val_G, summary2 = sess.run([train_G, loss_G, summaries], feed_dict={Z: noise})
 				loss_val_D_list.append(loss_val_D)
 				loss_val_G_list.append(loss_val_G)
-			if epoch % 1000 == 0:
-				start = epoch * 10
-				print("generating data")
-				for i in range(start, start + 10):
-					f = open("generated_data/sample_" + str(i) + ".txt", "w")
-					noise = get_noise(1, n_genes)
-					out = sess.run([G], feed_dict={Z: noise})
-					line = ""
-					test = np.asarray(out)
-					print(test.shape)
-					print(len(out[0][0]))
-					for num in out[0][0]:
-						line += str(num) + ","
-					f.write(line)
-					f.close()
-				sess.close()
-			writer.add_summary(summary1, epoch)
-			writer.add_summary(summary2, epoch)
-			loss.write(str(loss_val_D) + "\t" + str(loss_val_G) + "\n")
-			print(str(loss_val_D) + "\t" + str(loss_val_G) + "\n")
+			writer.add_summary(summary1,epoch)
+			writer.add_summary(summary2,epoch)
+			print(str(np.mean(loss_val_D_list)) + "\t" + str(np.mean(loss_val_G)) + "\n")
 			print(str(epoch))
-		# tf.train.Saver().save(sess,"checkpoint/model.txt")
+
+	# tf.train.Saver().save(sess,"checkpoint/model.txt")
 
 		print(' converge ', 'Epoch:', '%04d' % (epoch + 1), 'n_iter :',
 			  '%04d' % n_iter, 'D_loss : {:.4}'.format(np.mean(loss_val_D_list)),
 			  'G_loss : {:.4}'.format(np.mean(loss_val_G_list)))
-
+		sess.close()
 
 	# example = data_for_GANs[0].reshape(1,-1)
 	# ex = example[0]
