@@ -582,7 +582,7 @@ class PM:
         # discriminator of GANs.
         def discriminator(inputs, D_W1, D_W2):
             hidden = tf.nn.leaky_relu(tf.matmul(inputs, D_W1))
-            output = tf.asinh(tf.matmul(hidden, D_W2))
+            output = tf.matmul(hidden, D_W2)
             return output
 
         # make random variables for generator.
@@ -727,7 +727,7 @@ class PM:
             loss.write(str(np.mean(loss_val_D_list)) + "\t" + str(np.mean(loss_val_G)) + "\n")
             print(str(np.mean(loss_val_D_list)) + "\t" + str(np.mean(loss_val_G)) + "\n")
             print(str(epoch))
-        # tf.train.Saver().save(sess,"checkpoint/model.txt")
+        tf.train.Saver().save(sess,"checkpoint/model.txt")
 
         print(' converge ', 'Epoch:', '%04d' % (epoch + 1), 'n_iter :',
               '%04d' % n_iter, 'D_loss : {:.4}'.format(np.mean(loss_val_D_list)),
