@@ -646,7 +646,7 @@ class PM:
         alpha = tf.random_uniform(
             shape=[batch_size, 1],
             minval=0.,
-            maxval=1.
+            maxval=.0001
         )
         differences = G-X
         interpolates = X + (alpha * differences)
