@@ -576,16 +576,16 @@ class PM:
         # generator of GANs.
         def generator(gw1, gw2,gw3, reconstucted_network_adjacency_matrix, noise_z):
             hidden = tf.nn.relu(tf.matmul(noise_z, reconstucted_network_adjacency_matrix * (gw1 * tf.transpose(gw1))))
-            hidden2 = tf.nn.relu(tf.matmul(hidden,reconstucted_network_adjacency_matrix * (gw2 * tf.transpose(gw2))))
-            output = tf.nn.relu(tf.matmul(hidden2,gw3))
+            hidden2 = tf.asinh(tf.matmul(hidden,reconstucted_network_adjacency_matrix * (gw2 * tf.transpose(gw2))))
+            output = tf.asinh(tf.matmul(hidden2,gw3))
             return output
 
 
         # discriminator of GANs.
         def discriminator(inputs, D_W1, D_W2,D_W3):
-            hidden = tf.nn.sigmoid(tf.matmul(inputs, D_W1))
-            hidden2 = tf.nn.relu(tf.matmul(hidden, D_W2))
-            output = tf.nn.relu(tf.matmul(hidden2, D_W3))
+            hidden = tf.nn.relu(tf.matmul(inputs, D_W1))
+            hidden2 = tf.asinh(tf.matmul(hidden, D_W2))
+            output = tf.asinh(tf.matmul(hidden2, D_W3))
             return output
 
         # make random variables for generator.

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7487bf5-427b-4d2f-9196-106b3f393e81" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/gpu_latest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gpu_latest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gpu_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/gpu_gen.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,11 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gpu_gen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="589" selection-start-line="589" selection-end-line="589" />
+            <state relative-caret-position="203">
+              <caret line="659" column="22" lean-forward="true" selection-start-line="659" selection-start-column="22" selection-end-line="659" selection-end-column="22" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -45,7 +45,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gpu_latest.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -101,7 +101,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>wassers</find>
       <find>generator_mode</find>
       <find>wasser</find>
       <find>loss_d</find>
@@ -131,6 +130,7 @@
       <find>zsc</find>
       <find>example</find>
       <find>loss</find>
+      <find>loss_D</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -150,8 +150,8 @@
         <option value="$PROJECT_DIR$/data_gen.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/data_test.py" />
-        <option value="$PROJECT_DIR$/gpu_gen.py" />
         <option value="$PROJECT_DIR$/gpu_latest.txt" />
+        <option value="$PROJECT_DIR$/gpu_gen.py" />
       </list>
     </option>
   </component>
@@ -363,12 +363,12 @@
       <workItem from="1562566312256" duration="837000" />
       <workItem from="1562636707475" duration="282000" />
       <workItem from="1562792288706" duration="1610000" />
-      <workItem from="1562798471838" duration="2177000" />
+      <workItem from="1562798471838" duration="2450000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53951000" />
+    <option name="totallyTimeSpent" value="54224000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -532,11 +532,6 @@
     <entry file="file://$PROJECT_DIR$/mnist_loss.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/loss12.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11704" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/generated_data/model12data/sample700_35.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3648" />
@@ -555,11 +550,6 @@
     <entry file="file://$PROJECT_DIR$/generated_data/model12data/sample400_65.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-98876" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generated_data/model12data/sample800_86.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-96236" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/generated_data/model12data/sample200_52.txt">
@@ -587,20 +577,30 @@
         <state relative-caret-position="-98876" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gpu_gen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="589" selection-start-line="589" selection-end-line="589" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gpu_latest.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="2" selection-start-column="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loss12.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11704" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generated_data/model12data/sample800_86.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-96236" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gpu_gen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="659" column="22" lean-forward="true" selection-start-line="659" selection-start-column="22" selection-end-line="659" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
