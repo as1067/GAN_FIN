@@ -27,12 +27,13 @@ from keras.layers import Input, Dense, Reshape, Flatten
 from keras.layers.merge import _Merge
 from keras.layers.convolutional import Convolution2D, Conv2DTranspose
 from keras.layers.normalization import BatchNormalization
+# from keras.activations import Relu
 from keras.layers.advanced_activations import LeakyReLU
 from keras.optimizers import Adam
 from keras.datasets import mnist
 from keras import backend as K
 from functools import partial
-
+import cv2
 try:
     from PIL import Image
 except ImportError:
@@ -110,30 +111,26 @@ def make_generator():
     """Creates a generator model that takes a 100-dimensional noise vector as a "seed",
     and outputs images of size 28x28x1."""
     model = Sequential()
-    model.add(Dense(1024, input_dim=100))
-    model.add(LeakyReLU())
-    model.add(Dense(128 * 7 * 7))
+    model.add(Dense(1024, input_dim=100,activation="relu"))
+    model.add(Dense(128 * 20 * 15,activation="relu"))
     model.add(BatchNormalization())
-    model.add(LeakyReLU())
     if K.image_data_format() == 'channels_first':
-        model.add(Reshape((128, 7, 7), input_shape=(128 * 7 * 7,)))
+        model.add(Reshape((128, 20, 15), input_shape=(128 * 15 * 20,)))
         bn_axis = 1
     else:
-        model.add(Reshape((7, 7, 128), input_shape=(128 * 7 * 7,)))
+        model.add(Reshape((15, 20, 128), input_shape=(128 * 15 * 20,)))
         bn_axis = -1
-    model.add(Conv2DTranspose(128, (5, 5), strides=2, padding='same'))
+    model.add(Conv2DTranspose(128, (5, 5), strides=2, padding='same',activation="relu"))
     model.add(BatchNormalization(axis=bn_axis))
-    model.add(LeakyReLU())
-    model.add(Convolution2D(64, (5, 5), padding='same'))
+    model.add(Convolution2D(64, (5, 5), padding='same',activation="relu"))
     model.add(BatchNormalization(axis=bn_axis))
-    model.add(LeakyReLU())
-    model.add(Conv2DTranspose(64, (5, 5), strides=2, padding='same'))
+    model.add(Conv2DTranspose(64, (5, 5), strides=2, padding='same',activation="relu"))
     model.add(BatchNormalization(axis=bn_axis))
-    model.add(LeakyReLU())
     # Because we normalized training inputs to lie in the range [-1, 1],
     # the tanh function should be used for the output of the generator to ensure
     # its output also lies in this range.
-    model.add(Convolution2D(1, (5, 5), padding='same', activation='tanh'))
+    model.add(Convolution2D(1, (5, 5), padding='same', activation='sigmoid'))
+    # model.summary()
     return model
 
 
@@ -148,20 +145,16 @@ def make_discriminator():
     used in the discriminator."""
     model = Sequential()
     if K.image_data_format() == 'channels_first':
-        model.add(Convolution2D(64, (5, 5), padding='same', input_shape=(1, 28, 28)))
+        model.add(Convolution2D(64, (5, 5), padding='same', input_shape=(1, 60, 80)))
     else:
-        model.add(Convolution2D(64, (5, 5), padding='same', input_shape=(28, 28, 1)))
-    model.add(LeakyReLU())
+        model.add(Convolution2D(64, (5, 5), padding='same', input_shape=(60, 80, 1),activation="relu"))
     model.add(Convolution2D(128, (5, 5), kernel_initializer='he_normal',
-                            strides=[2, 2]))
-    model.add(LeakyReLU())
+                            strides=[2, 2],activation="relu"))
     model.add(Convolution2D(128, (5, 5), kernel_initializer='he_normal', padding='same',
-                            strides=[2, 2]))
-    model.add(LeakyReLU())
+                            strides=[2, 2],activation="relu"))
     model.add(Flatten())
-    model.add(Dense(1024, kernel_initializer='he_normal'))
-    model.add(LeakyReLU())
-    model.add(Dense(1, kernel_initializer='he_normal'))
+    model.add(Dense(1024, kernel_initializer='he_normal',activation="relu"))
+    model.add(Dense(1, kernel_initializer='he_normal',activation="relu"))
     return model
 
 
@@ -190,7 +183,7 @@ def generate_images(generator_model, output_dir, epoch):
     """Feeds random seeds into the generator and tiles and saves the output to a PNG
     file."""
     test_image_stack = generator_model.predict(np.random.rand(10, 100))
-    test_image_stack = (test_image_stack * 127.5) + 127.5
+    test_image_stack = (test_image_stack * 255)
     test_image_stack = np.squeeze(np.round(test_image_stack).astype(np.uint8))
     tiled_output = tile_images(test_image_stack)
     tiled_output = Image.fromarray(tiled_output, mode='L')  # L specifies greyscale
@@ -205,13 +198,32 @@ parser.add_argument("--output_dir", "-o", required=True,
 args = parser.parse_args()
 
 # First we load the image data, reshape it and normalize it to the range [-1, 1]
-(X_train, y_train), (X_test, y_test) = mnist.load_data()
-X_train = np.concatenate((X_train, X_test), axis=0)
-if K.image_data_format() == 'channels_first':
-    X_train = X_train.reshape((X_train.shape[0], 1, X_train.shape[1], X_train.shape[2]))
-else:
-    X_train = X_train.reshape((X_train.shape[0], X_train.shape[1], X_train.shape[2], 1))
-X_train = (X_train.astype(np.float32) - 127.5) / 127.5
+# (X_train, y_train), (X_test, y_test) = mnist.load_data()
+# X_train = np.concatenate((X_train, X_test), axis=0)
+# if K.image_data_format() == 'channels_first':
+#     X_train = X_train.reshape((X_train.shape[0], 1, X_train.shape[1], X_train.shape[2]))
+# else:
+#     X_train = X_train.reshape((X_train.shape[0], X_train.shape[1], X_train.shape[2], 1))
+# X_train = (X_train.astype(np.float32) - 127.5) / 127.5
+images = []
+for i in range(2,10):
+    vidcap = cv2.VideoCapture("models/edge"+str(i)+".avi")
+    print("preparing data")
+    count = 0
+    # i = 0
+    success = True
+    while success:
+        success, image = vidcap.read()
+        if success:
+            # print(image)
+            image = cv2.resize(image,(80,60))
+            image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+            image = np.expand_dims(image,2)
+            # print(image.shape)
+            image = np.true_divide(image,255)
+            images.append(image)
+images = np.asarray(images)
+
 
 # Now we initialize the generator and discriminator.
 generator = make_generator()

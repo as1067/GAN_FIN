@@ -339,8 +339,7 @@ def preprocessing():
                                                                                                    num2gene, gene2num)
     # raw_mRNA2 = np.asarray(raw_mRNA2)
     # normalizing data for each sample by z-scoring in mRNA, CNA, methylation and SNP data respectly.
-    # mRNA = zscore(raw_mRNA2)
-    mRNA = raw_mRNA2
+    mRNA = zscore(raw_mRNA2)
     # CNAvalues=zscore(raw_CNA2.values.astype('float64'))
     # metvalues=zscore(raw_met2.values.astype('float64'))
     # snpvalues=zscore(raw_snp2.values.astype('float64'))
@@ -575,16 +574,16 @@ class PM:
 
         # generator of GANs.
         def generator(gw1, gw2,gw3, reconstucted_network_adjacency_matrix, noise_z):
-            hidden = tf.nn.relu(tf.matmul(noise_z, reconstucted_network_adjacency_matrix * (gw1 * tf.transpose(gw1))))
-            hidden2 = tf.nn.relu(tf.matmul(hidden,reconstucted_network_adjacency_matrix * (gw2 * tf.transpose(gw2))))
-            output = tf.nn.relu(tf.matmul(hidden2,gw3))
+            hidden = tf.nn.leaky_relu(tf.matmul(noise_z, reconstucted_network_adjacency_matrix * (gw1 * tf.transpose(gw1))))
+            hidden2 = tf.nn.leaky_relu(tf.matmul(hidden,reconstucted_network_adjacency_matrix * (gw2 * tf.transpose(gw2))))
+            output = tf.asinh(tf.matmul(hidden2,gw3))
             return output
 
 
         # discriminator of GANs.
         def discriminator(inputs, D_W1, D_W2,D_W3):
-            hidden = tf.nn.relu(tf.matmul(inputs, D_W1))
-            hidden2 = tf.nn.relu(tf.matmul(hidden, D_W2))
+            hidden = tf.nn.leaky_relu(tf.matmul(inputs, D_W1))
+            hidden2 = tf.nn.leaky_relu(tf.matmul(hidden, D_W2))
             output = tf.matmul(hidden2, D_W3)
             return output
 
