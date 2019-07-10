@@ -583,7 +583,7 @@ class PM:
 
         # discriminator of GANs.
         def discriminator(inputs, D_W1, D_W2,D_W3):
-            hidden = tf.nn.relu(tf.matmul(inputs, D_W1))
+            hidden = tf.nn.sigmoid(tf.matmul(inputs, D_W1))
             hidden2 = tf.nn.relu(tf.matmul(hidden, D_W2))
             output = tf.nn.relu(tf.matmul(hidden2, D_W3))
             return output

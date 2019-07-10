@@ -42,10 +42,10 @@ real = sample(data.tolist(),100)
 real = np.asarray(real)
 real = real.T
 print(gene_first.shape)
-epoch = 8500
+epoch = 300
 gen_data = np.zeros((100,n_genes))
 for i in range(100):
-    with open("generated_data/model10data/sample"+str(epoch)+"_"+str(i)+".txt") as f:
+    with open("generated_data/model12data/sample"+str(epoch)+"_"+str(i)+".txt") as f:
         reader = csv.reader(f)
         count = 0
         for row in reader:
@@ -53,4 +53,4 @@ for i in range(100):
             count+=1
 fake = gen_data.T
 # get_p_vals(gene_first,fake)
-get_stats(fake)
+get_p_vals(real,fake)
