@@ -623,7 +623,7 @@ class PM:
         batch_size = 1
         learning_rate = 0.0002
         epsilon = 1e-4
-        LAMBDA = 10
+        LAMBDA = 1
         # reconstucted_network_adjacency_matrix is an adjacency matrix of the reconstructed FIs network.
         reconstucted_network_adjacency_matrix, X, Z, gw1,gw2,gw3, D_W1, D_W2,D_W3 = prepare(adjacency_matrix, n_genes, 512, n_genes,
                                                                                0.01)
@@ -646,7 +646,7 @@ class PM:
         alpha = tf.random_uniform(
             shape=[batch_size, 1],
             minval=0.,
-            maxval=.0001
+            maxval=1.
         )
         differences = G-X
         interpolates = X + (alpha * differences)
