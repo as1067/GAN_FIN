@@ -21,7 +21,6 @@ sdist/
 var/
 wheels/
 checkpoint/
-generated_data/*
 *.egg-info/
 .installed.cfg
 *.egg

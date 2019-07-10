@@ -339,7 +339,8 @@ def preprocessing():
 																								   num2gene, gene2num)
 	# raw_mRNA2 = np.asarray(raw_mRNA2)
 	# normalizing data for each sample by z-scoring in mRNA, CNA, methylation and SNP data respectly.
-	mRNA = zscore(raw_mRNA2)
+	# mRNA = zscore(raw_mRNA2)
+	mRNA = raw_mRNA2
 	# CNAvalues=zscore(raw_CNA2.values.astype('float64'))
 	# metvalues=zscore(raw_met2.values.astype('float64'))
 	# snpvalues=zscore(raw_snp2.values.astype('float64'))
