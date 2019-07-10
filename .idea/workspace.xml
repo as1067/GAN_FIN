@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7487bf5-427b-4d2f-9196-106b3f393e81" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_gen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gpu_latest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gpu_latest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/example_data_0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_data_0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gpu_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/gpu_gen.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,20 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/example_data_16.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15030">
-              <caret line="1002" selection-start-line="1002" selection-end-line="1002" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gpu_gen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="700" column="38" selection-start-line="700" selection-start-column="30" selection-end-line="700" selection-end-column="38" />
+            <state relative-caret-position="-558">
+              <caret line="587" column="57" selection-start-line="587" selection-start-column="57" selection-end-line="587" selection-end-column="57" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -37,35 +27,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mnist_loss.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fc_gpu_gen.py">
+        <entry file="file://$PROJECT_DIR$/data_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="552" column="33" selection-start-line="552" selection-start-column="24" selection-end-line="552" selection-end-column="33" />
+            <state relative-caret-position="499">
+              <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
-              <caret line="23" column="11" lean-forward="true" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+              <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loss12.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11789" />
           </provider>
         </entry>
       </file>
@@ -73,19 +51,7 @@
         <entry file="file://$PROJECT_DIR$/gpu_latest.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_gen.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="342" column="20" lean-forward="true" selection-start-line="342" selection-start-column="20" selection-end-line="342" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
+              <caret column="2" selection-start-column="2" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -96,19 +62,43 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vizloss.py">
+        <entry file="file://$PROJECT_DIR$/generated_data/model12data/sample200_55.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+            <state relative-caret-position="-13702" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_gen.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2207">
+              <caret line="688" column="19" selection-start-line="688" selection-start-column="12" selection-end-line="688" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/generated_data/model12data/sample1500_99.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/generated_data/model12data/sample1200_30.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/generated_data/model12data/sample800_65.txt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>wgan-gp</find>
       <find>wassers</find>
       <find>generator_mode</find>
       <find>wasser</find>
@@ -138,6 +128,7 @@
       <find>generate</find>
       <find>generator</find>
       <find>zsc</find>
+      <find>example</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -155,10 +146,10 @@
         <option value="$PROJECT_DIR$/vizloss.py" />
         <option value="$PROJECT_DIR$/data_test.py" />
         <option value="$PROJECT_DIR$/fc_gpu_gen.py" />
-        <option value="$PROJECT_DIR$/gpu_gen.py" />
         <option value="$PROJECT_DIR$/gpu_latest.txt" />
         <option value="$PROJECT_DIR$/data_gen.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/gpu_gen.py" />
       </list>
     </option>
   </component>
@@ -177,6 +168,11 @@
             <path>
               <item name="GAN_FIN" type="b2602c69:ProjectViewProjectNode" />
               <item name="GAN_FIN" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GAN_FIN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GAN_FIN" type="462c0819:PsiDirectoryNode" />
+              <item name="generated_data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GAN_FIN" type="b2602c69:ProjectViewProjectNode" />
@@ -240,9 +236,6 @@
       <module name="GAN_FIN" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -348,8 +341,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.data_test" />
         <item itemvalue="Python.data_gen" />
+        <item itemvalue="Python.data_test" />
         <item itemvalue="Python.gpu_gen" />
         <item itemvalue="Python.wgan_keras" />
         <item itemvalue="Python.wgan_tf" />
@@ -371,12 +364,12 @@
       <workItem from="1562566312256" duration="837000" />
       <workItem from="1562636707475" duration="282000" />
       <workItem from="1562792288706" duration="1610000" />
-      <workItem from="1562798471838" duration="147000" />
+      <workItem from="1562798471838" duration="593000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51921000" />
+    <option name="totallyTimeSpent" value="52367000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -417,15 +410,6 @@
     <SUITE FILE_PATH="coverage/GAN_FIN$data_test.coverage" NAME="data_test Coverage Results" MODIFIED="1562532817475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/generated_data/sample8_400.txt" />
-    <entry file="file://$PROJECT_DIR$/generated_data/sample8_500.txt" />
-    <entry file="file://$PROJECT_DIR$/loss8.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-149561" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generated_data/sample8_600.txt" />
-    <entry file="file://$PROJECT_DIR$/generated_data/sample8_700.txt" />
     <entry file="file://$PROJECT_DIR$/generated_data/sample8_800.txt" />
     <entry file="file://$PROJECT_DIR$/generated_data/sample8_900.txt" />
     <entry file="file://$PROJECT_DIR$/generated_data/sample8_1000.txt" />
@@ -441,9 +425,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/example_data_2.txt">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/LA_mRNA.txt">
       <provider selected="true" editor-type-id="LargeFileEditor" />
@@ -490,16 +471,6 @@
     <entry file="file://$PROJECT_DIR$/example/example_data_7.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/example_data_15.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -518,9 +489,6 @@
           <caret line="1002" selection-start-line="1002" selection-end-line="1002" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/example_data_0.txt">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/vizloss.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -547,37 +515,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gpu_gen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="700" column="38" selection-start-line="700" selection-start-column="30" selection-end-line="700" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gpu_latest.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_gen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="342" column="20" lean-forward="true" selection-start-line="342" selection-start-column="20" selection-end-line="342" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
+          <caret column="2" selection-start-column="2" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="23" column="11" lean-forward="true" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generated_data/model12data/sample0_0.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generated_data/model12data/sample1500_99.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generated_data/model12data/sample1200_30.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/example_data_2.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generated_data/model12data/sample800_65.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generated_data/model12data/sample200_55.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-13702" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/example_data_0.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_gen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2207">
+          <caret line="688" column="19" selection-start-line="688" selection-start-column="12" selection-end-line="688" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gpu_gen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-558">
+          <caret line="587" column="57" selection-start-line="587" selection-start-column="57" selection-end-line="587" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
