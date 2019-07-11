@@ -42,7 +42,7 @@ real = sample(data.tolist(),100)
 real = np.asarray(real)
 real = real.T
 print(gene_first.shape)
-epoch = 3300
+epoch = 2000
 gen_data = np.zeros((100,n_genes))
 for i in range(100):
     with open("generated_data/model14data/sample"+str(epoch)+"_"+str(i)+".txt") as f:
