@@ -42,10 +42,10 @@ real = sample(data.tolist(),100)
 real = np.asarray(real)
 real = real.T
 print(gene_first.shape)
-epoch = 300
+epoch = 3300
 gen_data = np.zeros((100,n_genes))
 for i in range(100):
-    with open("generated_data/model12data/sample"+str(epoch)+"_"+str(i)+".txt") as f:
+    with open("generated_data/model14data/sample"+str(epoch)+"_"+str(i)+".txt") as f:
         reader = csv.reader(f)
         count = 0
         for row in reader:
