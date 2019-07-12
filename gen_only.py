@@ -614,7 +614,7 @@ class PM:
                                                                                0.01)
         G = generator(gw1, gw2,gw3, reconstucted_network_adjacency_matrix, Z)
         G_var_list = [gw1,gw2,gw3]
-        lossG = tf.reduce_mean(tf.squared_difference(G, Y))
+        lossG = tf.reduce_mean(tf.squared_difference(tf.transpose(G), Y))
         train_G = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(lossG, var_list=G_var_list)
         # n_iter = data_for_GANs.shape[0]
         sess = tf.Session()

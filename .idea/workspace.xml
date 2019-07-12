@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7487bf5-427b-4d2f-9196-106b3f393e81" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gen_keras.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gen_only.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gpu_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/gpu_gen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vizloss.py" beforeDir="false" afterPath="$PROJECT_DIR$/vizloss.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,8 +63,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gen_only.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="670" column="44" selection-start-line="670" selection-start-column="44" selection-end-line="670" selection-end-column="44" />
+            <state relative-caret-position="375">
+              <caret line="616" column="54" selection-start-line="616" selection-start-column="54" selection-end-line="616" selection-end-column="54" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -194,11 +189,6 @@
             <path>
               <item name="GAN_FIN" type="b2602c69:ProjectViewProjectNode" />
               <item name="GAN_FIN" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GAN_FIN" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GAN_FIN" type="462c0819:PsiDirectoryNode" />
-              <item name="generated_data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GAN_FIN" type="b2602c69:ProjectViewProjectNode" />
@@ -384,12 +374,12 @@
       <workItem from="1562566312256" duration="837000" />
       <workItem from="1562636707475" duration="282000" />
       <workItem from="1562792288706" duration="1610000" />
-      <workItem from="1562798471838" duration="13233000" />
+      <workItem from="1562798471838" duration="13440000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65007000" />
+    <option name="totallyTimeSpent" value="65214000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -645,8 +635,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gen_only.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="670" column="44" selection-start-line="670" selection-start-column="44" selection-end-line="670" selection-end-column="44" />
+        <state relative-caret-position="375">
+          <caret line="616" column="54" selection-start-line="616" selection-start-column="54" selection-end-line="616" selection-end-column="54" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
