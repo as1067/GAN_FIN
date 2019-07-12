@@ -37,15 +37,13 @@ for i in range(419):
         for row in reader:
             data[i][count] = float(row[0])
             count+=1
-gene_first = data.T
 real = sample(data.tolist(),100)
 real = np.asarray(real)
 real = real.T
-print(gene_first.shape)
-epoch = 2000
+epoch = 3000
 gen_data = np.zeros((100,n_genes))
 for i in range(100):
-    with open("generated_data/model14data/sample"+str(epoch)+"_"+str(i)+".txt") as f:
+    with open("generated_data/model15data/sample"+str(epoch)+"_"+str(i)+".txt") as f:
         reader = csv.reader(f)
         count = 0
         for row in reader:

@@ -549,10 +549,13 @@ class PM:
             reconstucted_network_adjacency_matrix = tf.constant(adjacency_matrix)
 
             # input.
-            X = tf.placeholder(tf.float32, [None, n_input])
+            X = tf.placeholder(tf.float32, [None,n_input])
 
+            Y = tf.placeholder(tf.float32, [n_input,None])
+            data = tf.placeholder(tf.float32,[None,100])
             # noise for generator.
-            Z = tf.placeholder(tf.float32, [None, n_noise])
+            Z = tf.placeholder(tf.float32, [None,n_noise])
+            # loss = tf.placeholder(tf.float32,[None,1])
             # Generator weights
             gw1 = tf.Variable(tf.random_normal([n_noise, n_genes], stddev=0.01))
             gw2 = tf.Variable(tf.random_normal([n_genes, n_genes], stddev=0.01))
@@ -561,24 +564,7 @@ class PM:
             # gw5 = tf.Variable(tf.random_normal([n_genes, n_genes], stddev=0.01))
 
 
-
-            # Discriminator weights
-            D_W1 = tf.Variable(tf.random_normal([n_input, n_hidden], stddev=0.01))
-            D_W2 = tf.Variable(tf.random_normal([n_hidden, n_hidden], stddev=0.01))
-            D_W3 = tf.Variable(tf.random_normal([n_hidden, 1], stddev=0.01))
-            # D_W4 = tf.Variable(tf.random_normal([int(n_hidden/4), int(n_hidden/8)], stddev=0.01))
-            # D_W5 = tf.Variable(tf.random_normal([int(n_hidden/8), 1], stddev=0.01))
-
-
-
-            # Set up weight summary
-            tf.summary.histogram("Discriminator weights 1", D_W1)
-            tf.summary.histogram("Discriminator weights 2", D_W2)
-            tf.summary.histogram("Generator weights 1", gw1)
-            tf.summary.histogram("Generator weights 2", gw2)
-
-
-            return reconstucted_network_adjacency_matrix, X, Z, gw1,gw2,gw3, D_W1, D_W2,D_W3
+            return reconstucted_network_adjacency_matrix, X, Z, gw1,gw2,gw3,data,Y
 
         # generator of GANs.
         def generator(gw1, gw2,gw3, reconstucted_network_adjacency_matrix, noise_z):
@@ -587,15 +573,9 @@ class PM:
             output = tf.nn.relu(tf.matmul(hidden2,gw3))
             return output
 
+        # def discriminator(dw1,dw2,dw3):
+        #     hidden1 = tf.nn.
 
-        # discriminator of GANs.
-        def discriminator(inputs, D_W1, D_W2,D_W3):
-            hidden1 = tf.nn.leaky_relu(tf.matmul(inputs, D_W1))
-            hidden2 = tf.nn.leaky_relu(tf.matmul(hidden1, D_W2))
-            hidden3 = tf.nn.leaky_relu(tf.matmul(hidden2, D_W3))
-            # hidden4 = tf.nn.leaky_relu(tf.matmul(hidden3, D_W4))
-            output = tf.matmul(hidden2, D_W3)
-            return output
 
         # make random variables for generator.
         def get_noise(batch_size, n_noise):
@@ -620,10 +600,6 @@ class PM:
         # n_genes is the length of genes from the reconstructed FIs network.
         n_genes = len(total_gene)
 
-        data_for_GANs = np.array(data_for_GANs)
-        data_for_GANs = data_for_GANs.T
-        print(data_for_GANs.shape)
-
         # creat an adjacency matrix from the reconstructed FIs network.
         adjacency_matrix = make_adjacencyMatrix_for_GANs(n_genes, edge_list)
 
@@ -634,56 +610,16 @@ class PM:
         epsilon = 1e-4
         LAMBDA = 10
         # reconstucted_network_adjacency_matrix is an adjacency matrix of the reconstructed FIs network.
-        reconstucted_network_adjacency_matrix, X, Z, gw1,gw2,gw3, D_W1, D_W2,D_W3 = prepare(adjacency_matrix, n_genes, 512, n_genes,
+        reconstucted_network_adjacency_matrix, X, Z, gw1,gw2,gw3,data,Y = prepare(adjacency_matrix, n_genes, 512, n_genes,
                                                                                0.01)
-
         G = generator(gw1, gw2,gw3, reconstucted_network_adjacency_matrix, Z)
-
-        D_gene = discriminator(G, D_W1, D_W2,D_W3)
-        # D_gene = D_gene.assign( tf.where (tf.equal(D_gene, tf.constant(0)), tf.constant(epsilon), D_gene) )
-        D_real = discriminator(X, D_W1, D_W2,D_W3)
-        # D_real = D_real.assign( tf.where (tf.equal(D_real, tf.constant(0)), tf.constant(epsilon), D_real) )
-        # loss function.
-        loss_D = -tf.reduce_mean(D_real)+tf.reduce_mean(D_gene)
-        D_var_list = [D_W1, D_W2,D_W3]
         G_var_list = [gw1,gw2,gw3]
-
-        # define optimizer.
-        # loss_G = -tf.reduce_mean(D_gene)
-        # loss_D = tf.reduce_mean(D_gene) - tf.reduce_mean(D_real)
-
-        alpha = tf.random_uniform(
-            shape=[batch_size, 1],
-            minval=0.,
-            maxval=1.
-        )
-        differences = G-X
-        interpolates = X + (alpha * differences)
-        gradients = tf.gradients(discriminator(interpolates,D_W1,D_W2,D_W3), [interpolates])[0]
-        slopes = tf.sqrt(tf.reduce_sum(tf.square(gradients), reduction_indices=[1]))
-        gradient_penalty = tf.reduce_mean((slopes - 1.) ** 2)
-        loss_D += LAMBDA * gradient_penalty
-        loss_G =-tf.reduce_mean(D_gene)
-        train_G = tf.train.AdamOptimizer(
-            learning_rate=1e-4,
-            beta1=0.5,
-            beta2=0.9
-        ).minimize(loss_G, var_list=G_var_list)
-        train_D = tf.train.AdamOptimizer(
-            learning_rate=1e-4,
-            beta1=0.5,
-            beta2=0.9
-        ).minimize(loss_D, var_list=D_var_list)
-
-        n_iter = data_for_GANs.shape[0]
+        lossG = tf.reduce_mean(tf.squared_difference(G, Y))
+        train_G = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(lossG, var_list=G_var_list)
+        # n_iter = data_for_GANs.shape[0]
         sess = tf.Session()
-        writer = tf.summary.FileWriter("./logs/gan_mrna")
-        summaries = tf.summary.merge_all()
         sess.run(tf.global_variables_initializer())
         loss_val_D, loss_val_G = 0, 0
-        datas = []
-        for i in range(n_iter):
-            datas.append(i)
         # print("generating compare data")
         # start = process_number*10+foldnum*10
         # for i in range(start,start+10):
@@ -699,52 +635,53 @@ class PM:
         # 	f.close()
         # perform GANs.
         # tf.train.Saver().save(sess,"checkpoint/start.txt")
+
+        def get_truth():
+            d = np.zeros((419, n_genes))
+            # print(d.shape)
+            for i in range(419):
+                with open("example/example_data_" + str(i) + ".txt") as f:
+                    reader = csv.reader(f)
+                    count = 0
+                    for row in reader:
+                        d[i][count] = float(row[0])
+                        count += 1
+            real = sample(d.tolist(), 1)
+            real = np.asarray(real)
+            real = real.T
+            return real
+
+        # def get_loss(output,truth):
+        #     print(output.shape)
+        #     output.T
+        #     ps = []
+        #     for i in range(truth.shape[0]):
+        #         ps.append(stats.ttest_ind(truth[i], output[i,:], equal_var=False)[1])
+        #     np.asarray(ps)
+        #     return ps
+
         loss = open("loss"+str(n)+".txt", "w")
         print("training")
-        for epoch in range(10000):
+        for epoch in range(100000):
             loss_val_D_list = []
             loss_val_G_list = []
-            inds = sample(datas,50)
-            if epoch % 100 == 0:
-                for i in range(100):
-                    f = open("generated_data/model"+str(n)+"data/sample" + str(epoch) + "_" + str(i) + ".txt", "w")
-                    noise = get_noise(1, n_genes)
-                    out = sess.run([G], feed_dict={Z: noise})
-                    # line = ""
-                    # test = np.asarray(out)
-                    # print(test.shape)
-                    # print(len(out[0][0]))
-                    for num in out[0][0]:
-                        f.write(str(num) + "\n")
-                    f.close()
-            for i in inds:
-                batch_xs = data_for_GANs[i].reshape(1, -1)
-                # print(batch_xs)
-                # sys.exit()
-                # print(batch_xs.shape)
-                # sys.exit()
-                noise = get_noise(1, n_genes)
-                _, loss_val_D = sess.run([train_D, loss_D], feed_dict={X: batch_xs, Z: noise})
-                _, loss_val_G = sess.run([train_G, loss_G], feed_dict={X:batch_xs,Z: noise})
-                # _, loss_val_D, summary1 = sess.run([train_D, loss_D, summaries], feed_dict={X: batch_xs, Z: noise})
-                # _, loss_val_G, summary2 = sess.run([train_G, loss_G, summaries], feed_dict={Z: noise})
-                loss_val_D_list.append(loss_val_D)
-                loss_val_G_list.append(loss_val_G)
-                # print(loss_val_D)
-                # sys.exit()
-                # if i%10 == 0:
-                #     writer.add_summary(summary1, (i + 209 * epoch))
-                #     writer.add_summary(summary2, (i + 209 * epoch))
-                # writer.add_summary(lossD,(i+209*epoch))
-                # writer.add_summary(lossG,(i+209*epoch))
-            loss.write(str(np.mean(loss_val_D_list)) + "\t" + str(np.mean(loss_val_G)) + "\n")
-            print(str(np.mean(loss_val_D_list)) + "\t" + str(np.mean(loss_val_G)) + "\n")
+            data = []
+            # for i in range(100):
+            #     noise = get_noise(1, n_genes)
+            #     out = sess.run([G], feed_dict={Z: noise})
+            #     data.append(out[0])
+            # data = np.asarray(data)
+            noise = get_noise(1, n_genes)
+            l = get_truth()
+            _,loss_val_G = sess.run([train_G,lossG], feed_dict={Y:l,Z:noise})
+            loss.write(str(loss_val_G) + "\n")
+            print(str(loss_val_G) + "\n")
             print(str(epoch))
         # tf.train.Saver().save(sess,"checkpoint/model.txt")
 
-        print(' converge ', 'Epoch:', '%04d' % (epoch + 1), 'n_iter :',
-              '%04d' % n_iter, 'D_loss : {:.4}'.format(np.mean(loss_val_D_list)),
-              'G_loss : {:.4}'.format(np.mean(loss_val_G_list)))
+        # print(' converge ', 'Epoch:', '%04d' % (epoch + 1), 'n_iter :',
+        #       '%04d' % n_iter, 'D_loss : {:.4}'.format(np.mean(loss_val_D_list)),
+        #       'G_loss : {:.4}'.format(np.mean(loss_val_G_list)))
         sess.close()
 
     # example = data_for_GANs[0].reshape(1,-1)

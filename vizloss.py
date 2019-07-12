@@ -4,7 +4,7 @@ import csv
 loss_d = []
 loss_g = []
 x = []
-filename = "loss14.txt"
+filename = "loss15.txt"
 with open(filename) as f:
     reader = csv.reader(f,delimiter="\t")
     count = 0
