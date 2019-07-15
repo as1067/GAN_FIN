@@ -27,7 +27,7 @@ clinical_file = "LA_Clinical.txt"
 
 
 def main():
-    # preprocossing.
+    # preprocossing
     pm = preprocessing()
     print("----------------------------------------------------------------------------------------------------")
     print("2. Step 1 : reconstructing FIs network")
@@ -341,6 +341,17 @@ def preprocessing():
     # normalizing data for each sample by z-scoring in mRNA, CNA, methylation and SNP data respectly.
     # mRNA = zscore(raw_mRNA2)
     mRNA = raw_mRNA2
+    mRNA = np.divide(mRNA,7000.0)
+    # print(mRNA.shape)
+    # mRNA.T
+    # maxs = []
+    # for i in range(mRNA.shape[0]):
+    #     max = np.amax(mRNA[i])
+    #     print(max)
+    #     maxs.append(max)
+    #     np.divide(mRNA[i],max)
+    # print(np.median(maxs))
+    # sys.exit()
     # CNAvalues=zscore(raw_CNA2.values.astype('float64'))
     # metvalues=zscore(raw_met2.values.astype('float64'))
     # snpvalues=zscore(raw_snp2.values.astype('float64'))
@@ -592,7 +603,7 @@ class PM:
         def discriminator(inputs, D_W1, D_W2,D_W3):
             hidden1 = tf.nn.leaky_relu(tf.matmul(inputs, D_W1))
             hidden2 = tf.nn.leaky_relu(tf.matmul(hidden1, D_W2))
-            hidden3 = tf.nn.leaky_relu(tf.matmul(hidden2, D_W3))
+            # hidden3 = tf.nn.leaky_relu(tf.matmul(hidden2, D_W3))
             # hidden4 = tf.nn.leaky_relu(tf.matmul(hidden3, D_W4))
             output = tf.matmul(hidden2, D_W3)
             return output
@@ -710,6 +721,7 @@ class PM:
                     f = open("generated_data/model"+str(n)+"data/sample" + str(epoch) + "_" + str(i) + ".txt", "w")
                     noise = get_noise(1, n_genes)
                     out = sess.run([G], feed_dict={Z: noise})
+                    out = np.multiply(out,7000.0)
                     # line = ""
                     # test = np.asarray(out)
                     # print(test.shape)
