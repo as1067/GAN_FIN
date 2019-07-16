@@ -27,7 +27,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mRNA_only.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
+            <state relative-caret-position="2059">
               <caret line="705" lean-forward="true" selection-start-line="705" selection-end-line="705" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
@@ -39,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gen_only.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="635" lean-forward="true" selection-start-line="635" selection-end-line="635" />
+            <state relative-caret-position="271">
+              <caret line="589" lean-forward="true" selection-start-line="589" selection-end-line="589" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -131,15 +131,15 @@
       <find>t_test</find>
       <find>3275729.2732049013</find>
       <find>3300000</find>
-      <find>generator</find>
       <find>.eval</find>
       <find>lossT</find>
       <find>lossG</find>
       <find>ttes</find>
       <find>G</find>
       <find>X</find>
-      <find>G_W</find>
       <find>get_tr</find>
+      <find>G_W</find>
+      <find>generator</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -371,12 +371,12 @@
       <workItem from="1562798471838" duration="13659000" />
       <workItem from="1563152961578" duration="3570000" />
       <workItem from="1563227231126" duration="314000" />
-      <workItem from="1563297268820" duration="7815000" />
+      <workItem from="1563297268820" duration="8371000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77132000" />
+    <option name="totallyTimeSpent" value="77688000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -388,7 +388,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.27831325" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -396,7 +396,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32891566" />
-      <window_info anchor="bottom" id="Python Console" order="11" weight="0.32891566" />
+      <window_info anchor="bottom" id="Python Console" order="11" visible="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -416,12 +416,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/gen_only.py</url>
-          <line>702</line>
+          <line>706</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/gen_only.py</url>
-          <line>703</line>
+          <line>707</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -603,13 +603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1014">
-          <caret line="1705" selection-start-line="1705" selection-end-line="1705" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gpu_gen.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7592">
@@ -620,9 +613,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1014">
+          <caret line="1705" selection-start-line="1705" selection-end-line="1705" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mRNA_only.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
+        <state relative-caret-position="2059">
           <caret line="705" lean-forward="true" selection-start-line="705" selection-end-line="705" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
@@ -632,8 +632,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gen_only.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="635" lean-forward="true" selection-start-line="635" selection-end-line="635" />
+        <state relative-caret-position="271">
+          <caret line="589" lean-forward="true" selection-start-line="589" selection-end-line="589" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
