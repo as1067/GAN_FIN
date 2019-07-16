@@ -554,10 +554,10 @@ class PM:
             # input.
             # X = tf.placeholder(tf.float32, [None,n_input])
 
-            Y = tf.placeholder(tf.float32, [n_genes,None,20])
+            Y = tf.placeholder(tf.float32, [n_genes,None,10])
             data = tf.placeholder(tf.float32,[None,100])
             # noise for generator.
-            Z = tf.placeholder(tf.float32, [20,None,n_noise])
+            Z = tf.placeholder(tf.float32, [10,None,n_noise])
             # loss = tf.placeholder(tf.float32,[None,1])
             # Generator weights
             gw1 = tf.Variable(tf.random_normal([n_noise, n_genes], stddev=0.01))
@@ -689,6 +689,7 @@ class PM:
 
         loss = open("loss"+str(n)+".txt", "w")
         print("training")
+        l = get_truth()
         for epoch in range(10000):
             loss_val_D_list = []
             loss_val_G_list = []
@@ -702,7 +703,6 @@ class PM:
             for i in range(20):
                 noise.append(get_noise(1, n_genes))
             # noise = get_noise(1,n_genes)
-            l = get_truth()
             print("running 1 epoch")
             # data = sess.run([get_gen_data()],feed_dict={Z:noise})
             # print(data)
