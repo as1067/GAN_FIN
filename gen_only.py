@@ -619,7 +619,7 @@ class PM:
         # set the parameters.
         tf.set_random_seed(0)
         batch_size = 1
-        learning_rate = 0.0002
+        learning_rate = 0.01
         epsilon = 1e-4
         LAMBDA = 10
         # reconstucted_network_adjacency_matrix is an adjacency matrix of the reconstructed FIs network.
