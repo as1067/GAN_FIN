@@ -544,6 +544,10 @@ class PM:
                 matrix[x][y] = matrix[y][x] = 1.
             return matrix
 
+
+
+
+
         # prepare for GANs.
         def prepare(adjacency_matrix, n_input, n_hidden, n_noise, stddev):
             reconstucted_network_adjacency_matrix = tf.constant(adjacency_matrix)
@@ -554,7 +558,7 @@ class PM:
             Y = tf.placeholder(tf.float32, [n_input,None])
             data = tf.placeholder(tf.float32,[None,100])
             # noise for generator.
-            Z = tf.placeholder(tf.float32, [None,n_noise])
+            Z = tf.placeholder(tf.float32, [419,None,n_noise])
             # loss = tf.placeholder(tf.float32,[None,1])
             # Generator weights
             gw1 = tf.Variable(tf.random_normal([n_noise, n_genes], stddev=0.01))
@@ -568,13 +572,20 @@ class PM:
 
         # generator of GANs.
         def generator(gw1, gw2,gw3, reconstucted_network_adjacency_matrix, noise_z):
-            hidden1 = tf.nn.relu(tf.matmul(noise_z,reconstucted_network_adjacency_matrix * (gw1 * tf.transpose(gw1))))
+            hidden1 = tf.nn.relu(tf.matmul(noise_z, reconstucted_network_adjacency_matrix*(gw1*tf.transpose(gw2))))
             hidden2 = tf.nn.relu(tf.matmul(hidden1,reconstucted_network_adjacency_matrix * (gw2 * tf.transpose(gw2))))
             output = tf.nn.relu(tf.matmul(hidden2,gw3))
             return output
 
-        # def discriminator(dw1,dw2,dw3):
-        #     hidden1 = tf.nn.
+        def get_gen_data():
+            noise = tf.unstack(Z)
+            data = []
+            for n in noise:
+                data.append(generator(gw1,gw2,gw3,reconstucted_network_adjacency_matrix,n))
+            data = tf.stack(data)
+            return data
+
+
 
 
         # make random variables for generator.
@@ -614,7 +625,11 @@ class PM:
                                                                                0.01)
         G = generator(gw1, gw2,gw3, reconstucted_network_adjacency_matrix, Z)
         G_var_list = [gw1,gw2,gw3]
-        lossG = tf.reduce_mean(tf.squared_difference(tf.transpose(G), Y))
+
+        # lossG = tf.reduce_mean(tf.squared_difference(tf.transpose(G), Y))
+        X = get_gen_data()
+        lossG = tf.reduce_sum(tf.abs((tf.math.reduce_mean(X,axis=1)-tf.math.reduce_mean(Y,axis=1))/((tf.square(tf.math.reduce_std(X,1)))+tf.square(tf.math.reduce_std(Y,1)))/419.0))
+
         train_G = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(lossG, var_list=G_var_list)
         # n_iter = data_for_GANs.shape[0]
         sess = tf.Session()
@@ -646,10 +661,8 @@ class PM:
                     for row in reader:
                         d[i][count] = float(row[0])
                         count += 1
-            real = sample(d.tolist(), 1)
-            real = np.asarray(real)
-            real = real.T
-            return real
+            d = d.T
+            return d
 
         # def get_loss(output,truth):
         #     print(output.shape)
@@ -662,7 +675,7 @@ class PM:
 
         loss = open("loss"+str(n)+".txt", "w")
         print("training")
-        for epoch in range(100000):
+        for epoch in range(10000):
             loss_val_D_list = []
             loss_val_G_list = []
             data = []
@@ -671,7 +684,10 @@ class PM:
             #     out = sess.run([G], feed_dict={Z: noise})
             #     data.append(out[0])
             # data = np.asarray(data)
-            noise = get_noise(1, n_genes)
+            noise = []
+            for i in range(419):
+                noise.append(get_noise(1, n_genes))
+            # noise = get_noise(1,n_genes)
             l = get_truth()
             _,loss_val_G = sess.run([train_G,lossG], feed_dict={Y:l,Z:noise})
             loss.write(str(loss_val_G) + "\n")

@@ -2,9 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7487bf5-427b-4d2f-9196-106b3f393e81" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gpu_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/gpu_gen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gpu_latest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gpu_latest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/.idea/NN_Picar.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/1output2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/1output7.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/1output9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/checkpoint/placeholder.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/edge_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/fix_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/frame_count.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/generator_summ.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/hough_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/images/placeholder.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/output2.avi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/output2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/output2old.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/output3.avi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/output3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/output4.avi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/output4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/output4old.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/output5.avi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/output5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/output6.avi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/output6.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/output7.avi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/output7.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/output7old.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/output8.avi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/output8.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/output9.avi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/output9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/output9old.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/sk_edge.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/test_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/train_keras.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN_Picar/wgan.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen_only.py" beforeDir="false" afterPath="$PROJECT_DIR$/gen_only.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,30 +56,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gpu_gen.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="29" column="19" lean-forward="true" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LA_mRNA.txt">
-          <provider selected="true" editor-type-id="LargeFileEditor">
-            <state relative-caret-position="-985" />
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mRNA_only.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3153">
-              <caret line="716" column="46" selection-start-line="716" selection-start-column="45" selection-end-line="716" selection-end-column="46" />
+            <state relative-caret-position="78">
+              <caret line="634" column="59" lean-forward="true" selection-start-line="634" selection-start-column="59" selection-end-line="634" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gen_only.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="692" column="40" selection-start-line="692" selection-start-column="40" selection-end-line="692" selection-end-column="40" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -46,13 +81,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gen_only.py">
+        <entry file="file:///usr/local/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2894">
-              <caret line="614" column="57" selection-start-line="614" selection-start-column="57" selection-end-line="614" selection-end-column="57" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1014">
+              <caret line="1705" selection-start-line="1705" selection-end-line="1705" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/lib/python3.7/site-packages/tensorflow/python/util/compat.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="447">
+              <caret line="64" selection-start-line="64" selection-end-line="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/lib/python3.7/site-packages/tensorflow/python/framework/tensor_util.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3044">
+              <caret line="572" selection-start-line="572" selection-end-line="572" />
             </state>
           </provider>
         </entry>
@@ -101,9 +151,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>disc</find>
-      <find>discr</find>
-      <find>zscor</find>
       <find>3512</find>
       <find>raw_mRNA2</find>
       <find>interse</find>
@@ -120,7 +167,6 @@
       <find>n_inpu</find>
       <find>loss_G</find>
       <find>loss</find>
-      <find>lossG</find>
       <find>Z</find>
       <find>Z:</find>
       <find>gw1</find>
@@ -131,6 +177,10 @@
       <find>3275729.2732049013</find>
       <find>3300000</find>
       <find>generator</find>
+      <find>G_W</find>
+      <find>.eval</find>
+      <find>lossT</find>
+      <find>lossG</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -151,9 +201,9 @@
         <option value="$PROJECT_DIR$/vizloss.py" />
         <option value="$PROJECT_DIR$/data_test.py" />
         <option value="$PROJECT_DIR$/gen_keras.py" />
-        <option value="$PROJECT_DIR$/gen_only.py" />
         <option value="$PROJECT_DIR$/gpu_latest.txt" />
         <option value="$PROJECT_DIR$/gpu_gen.py" />
+        <option value="$PROJECT_DIR$/gen_only.py" />
       </list>
     </option>
   </component>
@@ -161,11 +211,13 @@
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -176,13 +228,12 @@
             <path>
               <item name="GAN_FIN" type="b2602c69:ProjectViewProjectNode" />
               <item name="GAN_FIN" type="462c0819:PsiDirectoryNode" />
-              <item name="logs" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -208,7 +259,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.gpu_gen">
+  <component name="RunManager" selected="Python.gen_only">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="GAN_FIN" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -279,9 +330,6 @@
       <module name="GAN_FIN" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -301,6 +349,9 @@
       <module name="GAN_FIN" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -340,8 +391,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.gpu_gen" />
         <item itemvalue="Python.gen_only" />
+        <item itemvalue="Python.gpu_gen" />
         <item itemvalue="Python.data_test" />
         <item itemvalue="Python.data_gen" />
         <item itemvalue="Python.wgan_keras" />
@@ -364,18 +415,20 @@
       <workItem from="1562636707475" duration="282000" />
       <workItem from="1562792288706" duration="1610000" />
       <workItem from="1562798471838" duration="13659000" />
-      <workItem from="1563152961578" duration="1542000" />
+      <workItem from="1563152961578" duration="3570000" />
+      <workItem from="1563227231126" duration="314000" />
+      <workItem from="1563297268820" duration="4613000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66975000" />
+    <option name="totallyTimeSpent" value="73930000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27110156" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -389,7 +442,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32891566" />
-      <window_info anchor="bottom" id="Python Console" order="11" visible="true" weight="0.32891566" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="11" visible="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -410,11 +463,6 @@
     <SUITE FILE_PATH="coverage/GAN_FIN$data_test.coverage" NAME="data_test Coverage Results" MODIFIED="1562532817475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/generated_data/model9data/sample400_20.txt" />
-    <entry file="file://$PROJECT_DIR$/generated_data/model9data/sample300_92.txt" />
-    <entry file="file://$PROJECT_DIR$/generated_data/model9data/sample200_7.txt" />
-    <entry file="file://$PROJECT_DIR$/generated_data/model9data/sample100_0.txt" />
-    <entry file="file://$PROJECT_DIR$/generated_data/model9data/sample0_0.txt" />
     <entry file="file://$PROJECT_DIR$/generated_data/model10data/placeholder.txt" />
     <entry file="file://$PROJECT_DIR$/example/example_data_6.txt">
       <provider selected="true" editor-type-id="text-editor" />
@@ -517,6 +565,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gpu_latest.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2" selection-start-column="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gpu_gen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/example_data_286.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LA_mRNA.txt">
+      <provider selected="true" editor-type-id="LargeFileEditor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/wgan_keras.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1875">
@@ -547,42 +618,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gen_only.py">
+    <entry file="file://$PROJECT_DIR$/example/example_data_416.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2894">
-          <caret line="614" column="57" selection-start-line="614" selection-start-column="57" selection-end-line="614" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LA_mRNA.txt">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="-985" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gpu_latest.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="2" selection-start-column="2" selection-end-column="2" />
-        </state>
+        <state relative-caret-position="-98876" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mRNA_only.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3153">
-          <caret line="716" column="46" selection-start-line="716" selection-start-column="45" selection-end-line="716" selection-end-column="46" />
+        <state relative-caret-position="78">
+          <caret line="634" column="59" lean-forward="true" selection-start-line="634" selection-start-column="59" selection-end-line="634" selection-end-column="59" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gpu_gen.py">
+    <entry file="file:///usr/local/lib/python3.7/site-packages/tensorflow/python/util/compat.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="29" column="19" lean-forward="true" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+        <state relative-caret-position="447">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.7/site-packages/tensorflow/python/framework/tensor_util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3044">
+          <caret line="572" selection-start-line="572" selection-end-line="572" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1014">
+          <caret line="1705" selection-start-line="1705" selection-end-line="1705" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen_only.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="692" column="40" selection-start-line="692" selection-start-column="40" selection-end-line="692" selection-end-column="40" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
