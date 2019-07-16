@@ -17,7 +17,6 @@ import sys
 import argparse
 import csv
 import statistics
-from keras import backend as K
 from random import sample
 
 random.seed(0)
