@@ -554,10 +554,10 @@ class PM:
             # input.
             # X = tf.placeholder(tf.float32, [None,n_input])
 
-            Y = tf.placeholder(tf.float32, [n_genes,None,10])
+            Y = tf.placeholder(tf.float32, [n_genes,None,20])
             data = tf.placeholder(tf.float32,[None,100])
             # noise for generator.
-            Z = tf.placeholder(tf.float32, [10,None,n_noise])
+            Z = tf.placeholder(tf.float32, [20,None,n_noise])
             # loss = tf.placeholder(tf.float32,[None,1])
             # Generator weights
             gw1 = tf.Variable(tf.random_normal([n_noise, n_genes], stddev=0.01))
@@ -630,7 +630,7 @@ class PM:
 
         # lossG = tf.reduce_mean(tf.squared_difference(tf.transpose(G), Y))
         # X = get_gen_data()
-        num = tf.math.reduce_mean(get_gen_data(),1) - tf.math.reduce_mean(Y,1)
+        num = tf.math.reduce_mean(get_gen_data(),2) - tf.math.reduce_mean(Y,2)
         # variance = tf.square(tf.math.reduce_std(get_gen_data(),1))+tf.square(tf.math.reduce_std(Y,1))
         # denom = tf.divide(variance,100.0)
 
@@ -669,7 +669,7 @@ class PM:
                     for row in reader:
                         d[i][count] = float(row[0])
                         count += 1
-            real = sample(d.tolist(),10)
+            real = sample(d.tolist(),20)
             real = np.asarray(real)
             real = real.T
             # d = d.T
@@ -699,7 +699,7 @@ class PM:
             #     data.append(out[0])
             # data = np.asarray(data)
             noise = []
-            for i in range(10):
+            for i in range(20):
                 noise.append(get_noise(1, n_genes))
             # noise = get_noise(1,n_genes)
             l = get_truth()
