@@ -554,10 +554,10 @@ class PM:
             # input.
             # X = tf.placeholder(tf.float32, [None,n_input])
 
-            Y = tf.placeholder(tf.float32, [n_genes,None,10])
+            Y = tf.placeholder(tf.float32, [n_genes,None,20])
             data = tf.placeholder(tf.float32,[None,100])
             # noise for generator.
-            Z = tf.placeholder(tf.float32, [10,None,n_noise])
+            Z = tf.placeholder(tf.float32, [20,None,n_noise])
             # loss = tf.placeholder(tf.float32,[None,1])
             # Generator weights
             gw1 = tf.Variable(tf.random_normal([n_noise, n_genes], stddev=0.01))
