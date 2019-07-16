@@ -562,18 +562,18 @@ class PM:
             # Generator weights
             gw1 = tf.Variable(tf.random_normal([n_noise, n_genes], stddev=0.01))
             gw2 = tf.Variable(tf.random_normal([n_genes, n_genes], stddev=0.01))
-            # gw3 = tf.Variable(tf.random_normal([n_genes, n_genes], stddev=0.01))
+            gw3 = tf.Variable(tf.random_normal([n_genes, n_genes], stddev=0.01))
             # gw4 = tf.Variable(tf.random_normal([n_genes, n_genes], stddev=0.01))
             # gw5 = tf.Variable(tf.random_normal([n_genes, n_genes], stddev=0.01))
 
 
-            return reconstucted_network_adjacency_matrix, Z, gw1,gw2,data,Y
+            return reconstucted_network_adjacency_matrix, Z, gw1,gw2,gw3,data,Y
 
         # generator of GANs.
-        def generator(gw1, gw2, reconstucted_network_adjacency_matrix, noise_z):
+        def generator(gw1, gw2,gw3, reconstucted_network_adjacency_matrix, noise_z):
             hidden1 = tf.nn.relu(tf.matmul(noise_z, reconstucted_network_adjacency_matrix*(gw1*tf.transpose(gw2))))
-            # hidden2 = tf.nn.relu(tf.matmul(hidden1,reconstucted_network_adjacency_matrix * (gw2 * tf.transpose(gw2))))
-            output = tf.nn.relu(tf.matmul(hidden1,gw2))
+            hidden2 = tf.nn.relu(tf.matmul(hidden1,reconstucted_network_adjacency_matrix * (gw2 * tf.transpose(gw2))))
+            output = tf.nn.relu(tf.matmul(hidden1,gw3))
             return output
 
         def get_gen_data():
@@ -581,7 +581,7 @@ class PM:
             noise = tf.unstack(Z)
             data = []
             for n in noise:
-                data.append(generator(gw1,gw2,reconstucted_network_adjacency_matrix,n))
+                data.append(generator(gw1,gw2,gw3,reconstucted_network_adjacency_matrix,n))
             data = tf.stack(data)
             data = tf.transpose(data)
             print(data)
@@ -623,18 +623,18 @@ class PM:
         epsilon = 1e-4
         LAMBDA = 10
         # reconstucted_network_adjacency_matrix is an adjacency matrix of the reconstructed FIs network.
-        reconstucted_network_adjacency_matrix, Z, gw1,gw2,data,Y = prepare(adjacency_matrix, n_genes, 512, n_genes,
+        reconstucted_network_adjacency_matrix, Z, gw1,gw2,gw3,data,Y = prepare(adjacency_matrix, n_genes, 512, n_genes,
                                                                                0.01)
         # G = generator(gw1, gw2,gw3, reconstucted_network_adjacency_matrix, Z)
-        G_var_list = [gw1,gw2]
+        G_var_list = [gw1,gw2,gw3]
 
         # lossG = tf.reduce_mean(tf.squared_difference(tf.transpose(G), Y))
         # X = get_gen_data()
         num = tf.math.reduce_mean(get_gen_data(),2) - tf.math.reduce_mean(Y,2)
-        # variance = tf.square(tf.math.reduce_std(get_gen_data(),1))+tf.square(tf.math.reduce_std(Y,1))
-        # denom = tf.divide(variance,100.0)
+        variance = tf.square(tf.math.reduce_std(get_gen_data(),2))+tf.square(tf.math.reduce_std(Y,2))
+        denom = tf.divide(variance,20.0)
 
-        lossG = tf.reduce_sum(tf.abs(tf.divide(num,10)))
+        lossG = tf.reduce_sum(tf.abs(tf.divide(num,denom)))
 
         train_G = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(lossG, var_list=G_var_list)
         # n_iter = data_for_GANs.shape[0]
