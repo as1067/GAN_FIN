@@ -629,9 +629,9 @@ class PM:
         G_var_list = [gw1,gw2,gw3]
 
         # lossG = tf.reduce_mean(tf.squared_difference(tf.transpose(G), Y))
-        X = get_gen_data()
-        num = tf.math.reduce_mean(X,1) - tf.math.reduce_mean(Y,1)
-        variance = tf.square(tf.math.reduce_std(X,1))+tf.square(tf.math.reduce_std(Y,1))
+        # X = get_gen_data()
+        num = tf.math.reduce_mean(get_gen_data(),1) - tf.math.reduce_mean(Y,1)
+        variance = tf.square(tf.math.reduce_std(get_gen_data(),1))+tf.square(tf.math.reduce_std(Y,1))
         denom = tf.divide(variance,419.0)
 
         lossG = tf.reduce_sum(tf.abs(tf.divide(num,denom)))
@@ -700,6 +700,8 @@ class PM:
             # noise = get_noise(1,n_genes)
             l = get_truth()
             print("running 1 epoch")
+            # data = sess.run([get_gen_data()],feed_dict={Z:noise})
+            # print(data)
             _,loss_val_G = sess.run([train_G,lossG], feed_dict={Y:l,Z:noise})
             loss.write(str(loss_val_G) + "\n")
             print(str(loss_val_G) + "\n")
