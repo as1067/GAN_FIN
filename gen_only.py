@@ -571,7 +571,7 @@ class PM:
 
         # generator of GANs.
         def generator(gw1, gw2, reconstucted_network_adjacency_matrix, noise_z):
-            hidden1 = tf.nn.relu(tf.matmul(noise_z, reconstucted_network_adjacency_matrix*(gw1*tf.transpose(gw2))))
+            hidden1 = tf.nn.relu(tf.matmul(noise_z, reconstucted_network_adjacency_matrix*(gw1*tf.transpose(gw1))))
             # hidden2 = tf.nn.relu(tf.matmul(hidden1,reconstucted_network_adjacency_matrix * (gw2 * tf.transpose(gw2))))
             output = tf.nn.relu(tf.matmul(hidden1,gw2))
             return output
