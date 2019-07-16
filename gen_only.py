@@ -555,7 +555,7 @@ class PM:
             # input.
             # X = tf.placeholder(tf.float32, [None,n_input])
 
-            Y = tf.placeholder(tf.float32, [n_input,None])
+            Y = tf.placeholder(tf.float32, [n_genes,419])
             data = tf.placeholder(tf.float32,[None,100])
             # noise for generator.
             Z = tf.placeholder(tf.float32, [419,None,n_noise])
@@ -583,6 +583,7 @@ class PM:
             for n in noise:
                 data.append(generator(gw1,gw2,gw3,reconstucted_network_adjacency_matrix,n))
             data = tf.stack(data)
+            print(data)
             return data
 
 
@@ -653,6 +654,7 @@ class PM:
 
         def get_truth():
             d = np.zeros((419, n_genes))
+            print("reading example data")
             # print(d.shape)
             for i in range(419):
                 with open("example/example_data_" + str(i) + ".txt") as f:
