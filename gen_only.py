@@ -553,7 +553,7 @@ class PM:
             reconstucted_network_adjacency_matrix = tf.constant(adjacency_matrix)
 
             # input.
-            X = tf.placeholder(tf.float32, [None,n_input])
+            # X = tf.placeholder(tf.float32, [None,n_input])
 
             Y = tf.placeholder(tf.float32, [n_input,None])
             data = tf.placeholder(tf.float32,[None,100])
@@ -628,7 +628,7 @@ class PM:
 
         # lossG = tf.reduce_mean(tf.squared_difference(tf.transpose(G), Y))
         X = get_gen_data()
-        lossG = tf.reduce_sum(tf.abs((tf.math.reduce_mean(X,axis=1)-tf.math.reduce_mean(Y,axis=1))/((tf.square(tf.math.reduce_std(X,1)))+tf.square(tf.math.reduce_std(Y,1)))/419.0))
+        lossG = tf.reduce_sum(tf.abs((tf.math.reduce_mean(X,axis=1)-tf.math.reduce_mean(Y,axis=1))/((tf.square(tf.reduce_std(X,1)))+tf.square(tf.reduce_std(Y,1)))/419.0))
 
         train_G = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(lossG, var_list=G_var_list)
         # n_iter = data_for_GANs.shape[0]
