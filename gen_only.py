@@ -555,7 +555,7 @@ class PM:
             # input.
             # X = tf.placeholder(tf.float32, [None,n_input])
 
-            Y = tf.placeholder(tf.float32, [n_genes,419])
+            Y = tf.placeholder(tf.float32, [n_genes,None,419])
             data = tf.placeholder(tf.float32,[None,100])
             # noise for generator.
             Z = tf.placeholder(tf.float32, [419,None,n_noise])
@@ -578,11 +578,13 @@ class PM:
             return output
 
         def get_gen_data():
+            print("generating")
             noise = tf.unstack(Z)
             data = []
             for n in noise:
                 data.append(generator(gw1,gw2,gw3,reconstucted_network_adjacency_matrix,n))
             data = tf.stack(data)
+            data = tf.transpose(data)
             print(data)
             return data
 
@@ -657,6 +659,7 @@ class PM:
             print("reading example data")
             # print(d.shape)
             for i in range(419):
+                # print(i)
                 with open("example/example_data_" + str(i) + ".txt") as f:
                     reader = csv.reader(f)
                     count = 0
@@ -664,6 +667,8 @@ class PM:
                         d[i][count] = float(row[0])
                         count += 1
             d = d.T
+            d = np.expand_dims(d,1)
+            print("finished")
             return d
 
         # def get_loss(output,truth):
@@ -691,6 +696,7 @@ class PM:
                 noise.append(get_noise(1, n_genes))
             # noise = get_noise(1,n_genes)
             l = get_truth()
+            print("running 1 epoch")
             _,loss_val_G = sess.run([train_G,lossG], feed_dict={Y:l,Z:noise})
             loss.write(str(loss_val_G) + "\n")
             print(str(loss_val_G) + "\n")
