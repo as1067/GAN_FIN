@@ -568,7 +568,7 @@ class PM:
             # gw5 = tf.Variable(tf.random_normal([n_genes, n_genes], stddev=0.01))
 
 
-            return reconstucted_network_adjacency_matrix, X, Z, gw1,gw2,gw3,data,Y
+            return reconstucted_network_adjacency_matrix, Z, gw1,gw2,gw3,data,Y
 
         # generator of GANs.
         def generator(gw1, gw2,gw3, reconstucted_network_adjacency_matrix, noise_z):
@@ -621,7 +621,7 @@ class PM:
         epsilon = 1e-4
         LAMBDA = 10
         # reconstucted_network_adjacency_matrix is an adjacency matrix of the reconstructed FIs network.
-        reconstucted_network_adjacency_matrix, X, Z, gw1,gw2,gw3,data,Y = prepare(adjacency_matrix, n_genes, 512, n_genes,
+        reconstucted_network_adjacency_matrix, Z, gw1,gw2,gw3,data,Y = prepare(adjacency_matrix, n_genes, 512, n_genes,
                                                                                0.01)
         # G = generator(gw1, gw2,gw3, reconstucted_network_adjacency_matrix, Z)
         G_var_list = [gw1,gw2,gw3]
