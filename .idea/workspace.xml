@@ -2,50 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7487bf5-427b-4d2f-9196-106b3f393e81" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/.idea/NN_Picar.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/.idea/libraries/R_User_Library.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/1output2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/1output7.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/1output9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/checkpoint/placeholder.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/edge_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/fix_data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/frame_count.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/generator_summ.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/hough_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/images/placeholder.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/output2.avi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/output2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/output2old.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/output3.avi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/output3.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/output4.avi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/output4.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/output4old.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/output5.avi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/output5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/output6.avi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/output6.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/output7.avi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/output7.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/output7old.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/output8.avi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/output8.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/output9.avi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/output9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/output9old.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/sk_edge.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/test_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/train_keras.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_Picar/wgan.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gen_only.py" beforeDir="false" afterPath="$PROJECT_DIR$/gen_only.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,7 +16,7 @@
         <entry file="file://$PROJECT_DIR$/mRNA_only.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="78">
-              <caret line="634" column="59" lean-forward="true" selection-start-line="634" selection-start-column="59" selection-end-line="634" selection-end-column="59" />
+              <caret line="634" column="59" selection-start-line="634" selection-start-column="59" selection-end-line="634" selection-end-column="59" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -71,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gen_only.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="692" column="40" selection-start-line="692" selection-start-column="40" selection-end-line="692" selection-end-column="40" />
+            <state relative-caret-position="159">
+              <caret line="498" column="22" selection-start-line="498" selection-start-column="20" selection-end-line="498" selection-end-column="22" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -151,8 +107,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>3512</find>
-      <find>raw_mRNA2</find>
       <find>interse</find>
       <find>discrimin</find>
       <find>sys</find>
@@ -181,6 +135,8 @@
       <find>.eval</find>
       <find>lossT</find>
       <find>lossG</find>
+      <find>ttes</find>
+      <find>G</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -417,12 +373,12 @@
       <workItem from="1562798471838" duration="13659000" />
       <workItem from="1563152961578" duration="3570000" />
       <workItem from="1563227231126" duration="314000" />
-      <workItem from="1563297268820" duration="4613000" />
+      <workItem from="1563297268820" duration="4996000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73930000" />
+    <option name="totallyTimeSpent" value="74313000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -626,7 +582,7 @@
     <entry file="file://$PROJECT_DIR$/mRNA_only.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
-          <caret line="634" column="59" lean-forward="true" selection-start-line="634" selection-start-column="59" selection-end-line="634" selection-end-column="59" />
+          <caret line="634" column="59" selection-start-line="634" selection-start-column="59" selection-end-line="634" selection-end-column="59" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
@@ -656,8 +612,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gen_only.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="692" column="40" selection-start-line="692" selection-start-column="40" selection-end-line="692" selection-end-column="40" />
+        <state relative-caret-position="159">
+          <caret line="498" column="22" selection-start-line="498" selection-start-column="20" selection-end-line="498" selection-end-column="22" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>

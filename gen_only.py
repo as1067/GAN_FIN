@@ -623,7 +623,7 @@ class PM:
         # reconstucted_network_adjacency_matrix is an adjacency matrix of the reconstructed FIs network.
         reconstucted_network_adjacency_matrix, X, Z, gw1,gw2,gw3,data,Y = prepare(adjacency_matrix, n_genes, 512, n_genes,
                                                                                0.01)
-        G = generator(gw1, gw2,gw3, reconstucted_network_adjacency_matrix, Z)
+        # G = generator(gw1, gw2,gw3, reconstucted_network_adjacency_matrix, Z)
         G_var_list = [gw1,gw2,gw3]
 
         # lossG = tf.reduce_mean(tf.squared_difference(tf.transpose(G), Y))
