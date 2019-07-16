@@ -688,28 +688,29 @@ class PM:
         #     return ps
 
         loss = open("loss"+str(n)+".txt", "w")
-        print("training")
-        l = get_truth()
-        for epoch in range(10000):
-            loss_val_D_list = []
-            loss_val_G_list = []
-            data = []
-            # for i in range(100):
-            #     noise = get_noise(1, n_genes)
-            #     out = sess.run([G], feed_dict={Z: noise})
-            #     data.append(out[0])
-            # data = np.asarray(data)
-            noise = []
-            for i in range(20):
-                noise.append(get_noise(1, n_genes))
-            # noise = get_noise(1,n_genes)
-            print("running 1 epoch")
-            # data = sess.run([get_gen_data()],feed_dict={Z:noise})
-            # print(data)
-            _,loss_val_G = sess.run([train_G,lossG], feed_dict={Y:l,Z:noise})
-            loss.write(str(loss_val_G) + "\n")
-            print(str(loss_val_G) + "\n")
-            print(str(epoch))
+        for i in range(50):
+            print("training "+str(i))
+            l = get_truth()
+            for epoch in range(800):
+                loss_val_D_list = []
+                loss_val_G_list = []
+                data = []
+                # for i in range(100):
+                #     noise = get_noise(1, n_genes)
+                #     out = sess.run([G], feed_dict={Z: noise})
+                #     data.append(out[0])
+                # data = np.asarray(data)
+                noise = []
+                for i in range(20):
+                    noise.append(get_noise(1, n_genes))
+                # noise = get_noise(1,n_genes)
+                print("running 1 epoch")
+                # data = sess.run([get_gen_data()],feed_dict={Z:noise})
+                # print(data)
+                _,loss_val_G = sess.run([train_G,lossG], feed_dict={Y:l,Z:noise})
+                loss.write(str(loss_val_G) + "\n")
+                print(str(loss_val_G) + "\n")
+                print(str(epoch))
         # tf.train.Saver().save(sess,"checkpoint/model.txt")
 
         # print(' converge ', 'Epoch:', '%04d' % (epoch + 1), 'n_iter :',
