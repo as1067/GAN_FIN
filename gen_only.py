@@ -554,10 +554,10 @@ class PM:
             # input.
             # X = tf.placeholder(tf.float32, [None,n_input])
 
-            Y = tf.placeholder(tf.float32, [n_genes,None,100])
+            Y = tf.placeholder(tf.float32, [n_genes,None,10])
             data = tf.placeholder(tf.float32,[None,100])
             # noise for generator.
-            Z = tf.placeholder(tf.float32, [100,None,n_noise])
+            Z = tf.placeholder(tf.float32, [10,None,n_noise])
             # loss = tf.placeholder(tf.float32,[None,1])
             # Generator weights
             gw1 = tf.Variable(tf.random_normal([n_noise, n_genes], stddev=0.01))
@@ -634,7 +634,7 @@ class PM:
         # variance = tf.square(tf.math.reduce_std(get_gen_data(),1))+tf.square(tf.math.reduce_std(Y,1))
         # denom = tf.divide(variance,100.0)
 
-        lossG = tf.reduce_sum(tf.abs(tf.divide(num,100)))
+        lossG = tf.reduce_sum(tf.abs(tf.divide(num,10)))
 
         train_G = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(lossG, var_list=G_var_list)
         # n_iter = data_for_GANs.shape[0]
@@ -669,7 +669,7 @@ class PM:
                     for row in reader:
                         d[i][count] = float(row[0])
                         count += 1
-            real = sample(d.tolist(),100)
+            real = sample(d.tolist(),10)
             real = np.asarray(real)
             real = real.T
             # d = d.T
@@ -699,7 +699,7 @@ class PM:
             #     data.append(out[0])
             # data = np.asarray(data)
             noise = []
-            for i in range(100):
+            for i in range(10):
                 noise.append(get_noise(1, n_genes))
             # noise = get_noise(1,n_genes)
             l = get_truth()
