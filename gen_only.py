@@ -702,7 +702,7 @@ class PM:
                 #     data.append(out[0])
                 # data = np.asarray(data)
                 noise = []
-                for i in range(20):
+                for n in range(20):
                     noise.append(get_noise(1, n_genes))
                 # noise = get_noise(1,n_genes)
                 print("running 1 epoch")
