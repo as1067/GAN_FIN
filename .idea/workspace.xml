@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a7487bf5-427b-4d2f-9196-106b3f393e81" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/gen_only.py" beforeDir="false" afterPath="$PROJECT_DIR$/gen_only.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gpu_latest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gpu_latest.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gen_only.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="645" column="46" lean-forward="true" selection-start-line="645" selection-start-column="46" selection-end-line="645" selection-end-column="46" />
+            <state relative-caret-position="201">
+              <caret line="569" lean-forward="true" selection-start-line="569" selection-end-line="569" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -62,10 +63,19 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gpu_latest.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="2" selection-start-column="2" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/example_data_121.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-98718" />
+            <state relative-caret-position="-91673" />
           </provider>
         </entry>
       </file>
@@ -95,15 +105,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1014">
               <caret line="1705" selection-start-line="1705" selection-end-line="1705" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python3.7/site-packages/tensorflow/python/util/compat.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="64" selection-start-line="64" selection-end-line="64" />
             </state>
           </provider>
         </entry>
@@ -172,8 +173,8 @@
         <option value="$PROJECT_DIR$/data_test.py" />
         <option value="$PROJECT_DIR$/gen_keras.py" />
         <option value="$PROJECT_DIR$/gpu_gen.py" />
-        <option value="$PROJECT_DIR$/gpu_latest.txt" />
         <option value="$PROJECT_DIR$/gen_only.py" />
+        <option value="$PROJECT_DIR$/gpu_latest.txt" />
       </list>
     </option>
   </component>
@@ -387,12 +388,12 @@
       <workItem from="1562798471838" duration="13659000" />
       <workItem from="1563152961578" duration="3570000" />
       <workItem from="1563227231126" duration="314000" />
-      <workItem from="1563297268820" duration="15484000" />
+      <workItem from="1563297268820" duration="16169000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84801000" />
+    <option name="totallyTimeSpent" value="85486000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -603,13 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gpu_latest.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="2" selection-start-column="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mRNA_only.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2059">
@@ -635,11 +629,6 @@
         <state relative-caret-position="-98876" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/example_data_121.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-98718" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gpu_gen.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
@@ -650,13 +639,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/example/example_data_121.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-91673" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gen_only.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="645" column="46" lean-forward="true" selection-start-line="645" selection-start-column="46" selection-end-line="645" selection-end-column="46" />
+        <state relative-caret-position="201">
+          <caret line="569" lean-forward="true" selection-start-line="569" selection-end-line="569" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gpu_latest.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2" selection-start-column="2" selection-end-column="2" />
         </state>
       </provider>
     </entry>

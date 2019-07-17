@@ -561,9 +561,9 @@ class PM:
             # loss = tf.placeholder(tf.float32,[None,1])
             z = tf.placeholder(tf.float32,[None,n_noise])
             # Generator weights
-            gw1 = tf.Variable(tf.random_normal([n_noise, n_genes], stddev=0.01))
-            gw2 = tf.Variable(tf.random_normal([n_genes, n_genes], stddev=0.01))
-            gw3 = tf.Variable(tf.random_normal([n_genes, n_genes], stddev=0.01))
+            gw1 = tf.Variable(tf.random_normal([n_noise, n_genes], stddev=0.1))
+            gw2 = tf.Variable(tf.random_normal([n_genes, n_genes], stddev=0.1))
+            gw3 = tf.Variable(tf.random_normal([n_genes, n_genes], stddev=0.1))
             # gw4 = tf.Variable(tf.random_normal([n_genes, n_genes], stddev=0.01))
             # gw5 = tf.Variable(tf.random_normal([n_genes, n_genes], stddev=0.01))
 
@@ -572,7 +572,7 @@ class PM:
 
         # generator of GANs.
         def generator(gw1, gw2, reconstucted_network_adjacency_matrix, noise_z):
-            hidden1 = tf.nn.relu(tf.matmul(noise_z, reconstucted_network_adjacency_matrix*(gw1*tf.transpose(gw1))))
+            hidden1 = tf.math.asinh(tf.matmul(noise_z, reconstucted_network_adjacency_matrix*(gw1*tf.transpose(gw1))))
             # hidden2 = tf.nn.relu(tf.matmul(hidden1,reconstucted_network_adjacency_matrix * (gw2 * tf.transpose(gw2))))
             output = tf.nn.relu(tf.matmul(hidden1,gw2))
             return output
