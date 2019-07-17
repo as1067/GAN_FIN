@@ -631,11 +631,11 @@ class PM:
 
         # lossG = tf.reduce_mean(tf.squared_difference(tf.transpose(G), Y))
         # X = get_gen_data()
-        num = tf.math.reduce_mean(get_gen_data(),2) - tf.math.reduce_mean(Y,2)
+        num = tf.math.square(tf.math.reduce_mean(get_gen_data(),2) - tf.math.reduce_mean(Y,2))
         # variance = tf.square(tf.math.reduce_std(get_gen_data(),2))+tf.square(tf.math.reduce_std(Y,2))
         # denom = tf.divide(variance,20.0)
 
-        lossG = tf.reduce_sum(tf.abs(tf.divide(num,20.0)))
+        lossG = tf.math.log(tf.reduce_sum(num))
 
         train_G = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(lossG, var_list=G_var_list)
         # n_iter = data_for_GANs.shape[0]
