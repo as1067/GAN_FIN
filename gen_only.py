@@ -559,6 +559,7 @@ class PM:
             # noise for generator.
             Z = tf.placeholder(tf.float32, [20,None,n_noise])
             # loss = tf.placeholder(tf.float32,[None,1])
+            z = tf.placeholder(tf.float32,[None,n_noise])
             # Generator weights
             gw1 = tf.Variable(tf.random_normal([n_noise, n_genes], stddev=0.01))
             gw2 = tf.Variable(tf.random_normal([n_genes, n_genes], stddev=0.01))
@@ -567,7 +568,7 @@ class PM:
             # gw5 = tf.Variable(tf.random_normal([n_genes, n_genes], stddev=0.01))
 
 
-            return reconstucted_network_adjacency_matrix, Z, gw1,gw2,data,Y
+            return reconstucted_network_adjacency_matrix, Z, gw1,gw2,data,Y,z
 
         # generator of GANs.
         def generator(gw1, gw2, reconstucted_network_adjacency_matrix, noise_z):
@@ -623,9 +624,9 @@ class PM:
         epsilon = 1e-4
         LAMBDA = 10
         # reconstucted_network_adjacency_matrix is an adjacency matrix of the reconstructed FIs network.
-        reconstucted_network_adjacency_matrix, Z, gw1,gw2,data,Y = prepare(adjacency_matrix, n_genes, 512, n_genes,
+        reconstucted_network_adjacency_matrix, Z, gw1,gw2,data,Y,z = prepare(adjacency_matrix, n_genes, 512, n_genes,
                                                                                0.01)
-        # G = generator(gw1, gw2,gw3, reconstucted_network_adjacency_matrix, Z)
+        G = generator(gw1, gw2, reconstucted_network_adjacency_matrix, z)
         G_var_list = [gw1,gw2]
 
         # lossG = tf.reduce_mean(tf.squared_difference(tf.transpose(G), Y))
@@ -705,12 +706,18 @@ class PM:
                     noise.append(get_noise(1, n_genes))
                 # noise = get_noise(1,n_genes)
                 print("running 1 epoch")
-                # data = sess.run([get_gen_data()],feed_dict={Z:noise})
-                # print(data)
                 _,loss_val_G = sess.run([train_G,lossG], feed_dict={Y:l,Z:noise})
                 loss.write(str(loss_val_G) + "\n")
                 print(str(loss_val_G) + "\n")
                 print(str(epoch))
+            print("generating sample data")
+            for j in range(20):
+                f = open("generated_data/model" + str(n) + "data/sample" + str(i) + "_" + str(j) + ".txt", "w")
+                noise = get_noise(1, n_genes)
+                out = sess.run([G], feed_dict={z: noise})
+                for num in out[0][0]:
+                    f.write(str(num) + "\n")
+                f.close()
         # tf.train.Saver().save(sess,"checkpoint/model.txt")
 
         # print(' converge ', 'Epoch:', '%04d' % (epoch + 1), 'n_iter :',
