@@ -29,7 +29,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gpu_gen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
+            <state relative-caret-position="158">
               <caret line="719" selection-start-line="719" selection-end-line="730" selection-end-column="29" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
@@ -53,12 +53,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gen_only.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="703" column="26" lean-forward="true" selection-start-line="703" selection-start-column="26" selection-end-line="703" selection-end-column="26" />
+            <state relative-caret-position="143">
+              <caret line="702" column="41" lean-forward="true" selection-start-line="702" selection-start-column="41" selection-end-line="702" selection-end-column="41" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/example_data_121.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-98718" />
           </provider>
         </entry>
       </file>
@@ -106,18 +113,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3044">
               <caret line="572" selection-start-line="572" selection-end-line="572" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" selection-start-line="13" selection-end-line="16" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -199,6 +194,11 @@
             <path>
               <item name="GAN_FIN" type="b2602c69:ProjectViewProjectNode" />
               <item name="GAN_FIN" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GAN_FIN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GAN_FIN" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -387,18 +387,18 @@
       <workItem from="1562798471838" duration="13659000" />
       <workItem from="1563152961578" duration="3570000" />
       <workItem from="1563227231126" duration="314000" />
-      <workItem from="1563297268820" duration="15142000" />
+      <workItem from="1563297268820" duration="15390000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84459000" />
+    <option name="totallyTimeSpent" value="84707000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27110156" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27110156" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -445,7 +445,6 @@
     <SUITE FILE_PATH="coverage/GAN_FIN$data_test.coverage" NAME="data_test Coverage Results" MODIFIED="1562532817475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/generated_data/model10data/sample1700_90.txt" />
     <entry file="file://$PROJECT_DIR$/generated_data/model10data/sample1700_79.txt" />
     <entry file="file://$PROJECT_DIR$/generated_data/model10data/sample2100_99.txt" />
     <entry file="file://$PROJECT_DIR$/example/example_data_7.txt">
@@ -611,16 +610,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gpu_gen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="719" selection-start-line="719" selection-end-line="730" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mRNA_only.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2059">
@@ -646,10 +635,25 @@
         <state relative-caret-position="-98876" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/example/example_data_121.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-98718" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gpu_gen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="719" selection-start-line="719" selection-end-line="730" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gen_only.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="703" column="26" lean-forward="true" selection-start-line="703" selection-start-column="26" selection-end-line="703" selection-end-column="26" />
+        <state relative-caret-position="143">
+          <caret line="702" column="41" lean-forward="true" selection-start-line="702" selection-start-column="41" selection-end-line="702" selection-end-column="41" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
